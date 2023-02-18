@@ -81,6 +81,8 @@ h1 {
     background-color: orange;
 }
 
+/* ADD-PLAYER-FORM */
+
 #add-player-form {
     display: flex;
     flex-direction: column;
@@ -96,4 +98,8 @@ h1 {
 
 #add-player-form input:focus {
     outline: none;
+}
+
+#submit-player-btn {
+    background-color: deepskyblue;
 }

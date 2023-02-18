@@ -121,7 +121,8 @@ h2 {
     background-color: deepskyblue;
 }
 
-.delete-button:hover {
+.delete-button:hover,
+.color:hover {
     cursor: pointer;
 }
 
@@ -137,4 +138,8 @@ h2 {
     height: 4.5rem;
     width: 4.5rem;
     margin: .25rem;
+}
+
+.color:hover {
+    transform: scale(1.1);
 }

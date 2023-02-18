@@ -40,10 +40,35 @@ submitPlayerBtn.addEventListener("click", function() {
 // ⬇️ EVENT HANDLERS ⬇️
 
 function handleAddNewPlayer() {
-    playersArray.push(addPlayerNameInput.value)
-    addPlayerNameInput.value = ""
-    console.log(playersArray)
-    renderPlayersList()
+    // no blank names
+    if (!addPlayerNameInput.value) {
+        return
+    }
+
+    // check if name exists (no duplicates)
+    const duplicate = playersArray.filter(function(name) {
+        if (name === addPlayerNameInput.value) {
+            console.log("Name in use")
+            console.log(name === addPlayerNameInput.value)
+        } else {
+            console.log("Name is ok")
+            console.log(name === addPlayerNameInput.value)
+        }
+        return name === addPlayerNameInput.value
+    })
+
+    if (duplicate.length > 0) {
+        console.log("Not adding to array")
+        console.log(duplicate)
+        console.log(playersArray)
+        return
+    } else {
+        console.log("Adding to array")
+        playersArray.push(addPlayerNameInput.value)
+        addPlayerNameInput.value = ""
+        console.log(playersArray)
+        renderPlayersList()
+    }
 }
 
 // ⬇️ RENDER THE APP ⬇️

@@ -1,9 +1,9 @@
 body {
+    outline: 1px solid red;
     margin: none;
     padding: none;
     box-sizing: border-box;
     max-width: 360px;
-    outline: 1px solid red;
 }
 
 /* TYPOGRAPHY */
@@ -23,9 +23,19 @@ h1 {
 /* START-GAME */
 
 #start-game {
+    outline: 1px solid orange;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    height: 90vh;
 }
 #start-game button {
+    padding: 1rem;
+    border-radius: .25rem;
+    border: none;
+    margin: 1rem 0;
+}
 
+#start-game button:hover {
+    cursor: pointer;
 }

@@ -73,12 +73,14 @@ function handleAddNewPlayer() {
 
 // handle deleting player from player list
 function handleDeletePlayer(player) {
-    console.log(player)
     const playerToRemove = playersArray.filter(function(name) {
         return name === player
     })[0]
 
-    console.log(playerToRemove)
+    const removalIndex = playersArray.indexOf(playerToRemove)
+    playersArray.splice(removalIndex, 1)
+    renderPlayersList()
+
 }
 
 // ⬇️ RENDER THE APP ⬇️

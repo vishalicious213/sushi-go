@@ -10,7 +10,7 @@
     - ✓ `Done`
         - ✓ Return to start screen
     - ✓ Show player list
-    - Delete player
+    - ✓ Delete player
     - Edit player's name
     - Edit player's color
 - `Start game`

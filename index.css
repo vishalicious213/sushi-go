@@ -1,9 +1,20 @@
 body {
     outline: 1px solid red;
-    margin: none;
-    padding: none;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     max-width: 360px;
+    height: 100vh;
+}
+
+/* UTILITY CLASSES */
+
+.flex {
+    display: flex;
+}
+
+.none {
+    display: none;
 }
 
 /* TYPOGRAPHY */
@@ -11,6 +22,7 @@ body {
 h1 {
     font-size: 1.75rem;
     text-align: center;
+    margin: 0;
 }
 
 /* CONTAINERS */
@@ -48,4 +60,11 @@ h1 {
 
 #start-game-btn {
     background-color: yellowgreen;
+}
+
+/* PLAYERS-SETUP-MODAL */
+
+#players-setup-modal {
+    justify-content: center;
+    align-items: center;
 }

@@ -4,6 +4,7 @@ const addPlayerBtn = document.getElementById("add-player-btn")
 const startGameBtn = document.getElementById("start-game-btn")
 // PLAYERS-SETUP-MODAL
 const playersSetupModal = document.getElementById("players-setup-modal")
+const modalPlayerList = document.getElementById("modal-player-list")
 const addPlayerDoneBtn = document.getElementById("add-player-done-btn")
 // ADD-PLAYER-FORM
 const addPlayerNameInput = document.getElementById("add-player-name")
@@ -32,4 +33,17 @@ submitPlayerBtn.addEventListener("click", function() {
     playersArray.push(addPlayerNameInput.value)
     addPlayerNameInput.value = ""
     console.log(playersArray)
+    renderPlayersList()
 })
+
+// ⬇️ RENDER THE APP ⬇️
+
+function renderPlayersList() {
+    modalPlayerList.innerHTML = ""
+
+    playersArray.forEach(function(player) {
+        modalPlayerList.innerHTML += `
+            <div class="player">${player}</div>
+        `
+    })
+}

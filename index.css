@@ -2,6 +2,15 @@ body {
     margin: none;
     padding: none;
     box-sizing: border-box;
+    max-width: 360px;
+    outline: 1px solid red;
+}
+
+/* TYPOGRAPHY */
+
+h1 {
+    font-size: 1.75rem;
+    text-align: center;
 }
 
 /* CONTAINERS */

@@ -120,3 +120,7 @@ h2 {
 #submit-player-btn {
     background-color: deepskyblue;
 }
+
+.delete-button:hover {
+    cursor: pointer;
+}

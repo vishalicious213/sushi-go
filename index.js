@@ -92,7 +92,7 @@ function renderPlayersList() {
         modalPlayerList.innerHTML += `
             <div class="player">
                 <span>${player}</span>
-                <span data-delete="${player}">X</span>
+                <span class="delete-button" data-delete="${player}">X</span>
             </div>
         `
     })

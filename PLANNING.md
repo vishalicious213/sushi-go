@@ -1,12 +1,17 @@
 ## SETUP
 
-- Add players
-    - Enter name (up to 10 letters)
-    - Pick player color
-- Delete player
-- Edit player's name
-- Edit player's color
-- Start game
+- ✓ `Add players`
+    - ✓ `Add Player`
+        - ✓ Enter name
+            - Up to 10 letters
+        - Pick player color
+    - ✓ `Done`
+        - ✓ Return to start screen
+    - ✓ Show player list
+    - Delete player
+    - Edit player's name
+    - Edit player's color
+- `Start game`
     - Goes to first player's scorecard
 
 ## PLAYER CARDS (SCORECARD)

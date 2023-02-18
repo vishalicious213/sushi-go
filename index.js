@@ -44,7 +44,7 @@ submitPlayerBtn.addEventListener("click", function() {
 // delete player from player list
 modalPlayerList.addEventListener("click", function(e) {
     if (e.target.dataset.delete) {
-        handleDeletePlayer(e)
+        handleDeletePlayer(e.target.dataset.delete)
     }
 })
 
@@ -71,8 +71,14 @@ function handleAddNewPlayer() {
     }
 }
 
-function handleDeletePlayer(e) {
-    console.log(e.target.dataset.delete)
+// handle deleting player from player list
+function handleDeletePlayer(player) {
+    console.log(player)
+    const playerToRemove = playersArray.filter(function(name) {
+        return name === player
+    })[0]
+
+    console.log(playerToRemove)
 }
 
 // ⬇️ RENDER THE APP ⬇️

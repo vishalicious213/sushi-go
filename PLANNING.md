@@ -3,7 +3,7 @@
 - ✓ `Add players`
     - ✓ `Add Player`
         - ✓ Enter name
-            - Up to 10 letters
+            - ✓ Up to 10 letters
         - Pick player color
     - ✓ `Done`
         - ✓ Return to start screen

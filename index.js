@@ -41,6 +41,13 @@ submitPlayerBtn.addEventListener("click", function() {
     handleAddNewPlayer()
 })
 
+// delete player from player list
+modalPlayerList.addEventListener("click", function(e) {
+    if (e.target.dataset.delete) {
+        console.log(e.target.dataset.delete)
+    }
+})
+
 // ⬇️ EVENT HANDLERS ⬇️
 
 // handle adding new player to player list

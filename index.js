@@ -11,7 +11,7 @@ const addPlayerNameInput = document.getElementById("add-player-name")
 const submitPlayerBtn = document.getElementById("submit-player-btn")
 // GLOBAL
 let playersArray = []
-const colorsArray = ["#ff0000", "#ff4000", "#ffbf00", "#ffff00", "#bfff00", "#40ff00", "#00bfff", "#0040ff", "#4000ff", "#8000ff", "#bf00ff", "#ff00bf", "#ff0040", "#f2f2f2", "#ccccff", "#000000"]
+const colorsArray = ["#ff00bf", "#ff0040", "#ff0000", "#ff4000", "#ffbf00", "#ffff00", "#bfff00", "#008000", "#00bfff", "#0040ff", "#4000ff", "#8000ff", "#bf00ff", "#f2f2f2", "#ccccff", "#000000"]
 
 // ⬇️ USER INTERFACE ⬇️
 
@@ -102,6 +102,7 @@ function renderPlayersList() {
 
 function renderColors() {
     const colorsDiv = document.getElementById("colors")
+    colorsDiv.innerHTML = ""
 
     colorsArray.forEach(function(color) {
         colorsDiv.innerHTML += `

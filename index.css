@@ -86,7 +86,7 @@ h2 {
 }
 
 .player {
-    outline: 1px solid green;
+    outline: 1px solid #008000;
     display: flex;
     justify-content: space-between;
     font-size: 1.25rem;
@@ -135,7 +135,7 @@ h2 {
 
 .color {
     outline: 1px solid black;
-    height: 4.5rem;
+    height: 2.5rem;
     width: 4.5rem;
     margin: .25rem;
 }

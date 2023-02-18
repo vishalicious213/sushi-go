@@ -21,6 +21,7 @@ addPlayerBtn.addEventListener("click", function() {
     startGameSection.classList.add("none")
     playersSetupModal.classList.remove("none")
     playersSetupModal.classList.add("flex")
+    renderColors()
 })
 
 // start game - go to 1st player's card
@@ -95,6 +96,16 @@ function renderPlayersList() {
                 <span>${player}</span>
                 <span class="delete-button" data-delete="${player}">X</span>
             </div>
+        `
+    })
+}
+
+function renderColors() {
+    const colorsDiv = document.getElementById("colors")
+
+    colorsArray.forEach(function(color) {
+        colorsDiv.innerHTML += `
+            <div data-color="${color}" class="color" style="background-color:${color};"></div>
         `
     })
 }

@@ -21,6 +21,10 @@ addPlayerBtn.addEventListener("click", function() {
     playersSetupModal.classList.add("flex")
 })
 
+startGameBtn.addEventListener("click", function() {
+    console.log("Start game")
+})
+
 addPlayerDoneBtn.addEventListener("click", function() {
     console.log("Done Adding Players")
     playersSetupModal.classList.add("none")

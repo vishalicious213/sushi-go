@@ -34,8 +34,18 @@ h1 {
     border-radius: .25rem;
     border: none;
     margin: 1rem 0;
+    font-size: 1.25rem;
+    font-weight: 600;
 }
 
 #start-game button:hover {
     cursor: pointer;
+}
+
+#add-player-btn {
+    background-color: orange;
+}
+
+#start-game-btn {
+    background-color: yellowgreen;
 }

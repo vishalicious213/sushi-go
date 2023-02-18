@@ -124,3 +124,17 @@ h2 {
 .delete-button:hover {
     cursor: pointer;
 }
+
+#colors {
+    /* outline: 1px solid red; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.color {
+    outline: 1px solid black;
+    height: 4.5rem;
+    width: 4.5rem;
+    margin: .25rem;
+}

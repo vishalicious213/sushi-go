@@ -85,3 +85,15 @@ h1 {
     display: flex;
     flex-direction: column;
 }
+
+#add-player-form input {
+    width: 90%;
+    margin: 0 auto 1rem;
+    box-sizing: border-box;
+    padding: .5rem;
+    font-size: 1.25rem;
+}
+
+#add-player-form input:focus {
+    outline: none;
+}

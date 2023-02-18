@@ -34,11 +34,17 @@ addPlayerDoneBtn.addEventListener("click", function() {
 })
 
 submitPlayerBtn.addEventListener("click", function() {
+    handleAddNewPlayer()
+})
+
+// ⬇️ EVENT HANDLERS ⬇️
+
+function handleAddNewPlayer() {
     playersArray.push(addPlayerNameInput.value)
     addPlayerNameInput.value = ""
     console.log(playersArray)
     renderPlayersList()
-})
+}
 
 // ⬇️ RENDER THE APP ⬇️
 

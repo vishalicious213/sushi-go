@@ -3,3 +3,20 @@ body {
     padding: none;
     box-sizing: border-box;
 }
+
+/* CONTAINERS */
+
+#start-game {
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* START-GAME */
+
+#start-game {
+    display: flex;
+    flex-direction: column;
+}
+#start-game button {
+
+}

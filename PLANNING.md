@@ -4,8 +4,8 @@
     - ✓ `Add Player`
         - ✓ Enter name
             - ✓ Up to 10 letters
-            - No blank names
-            - No duplicate names
+            - ✓ No blank names
+            - ✓ No duplicate names
         - Pick player color
     - ✓ `Done`
         - ✓ Return to start screen

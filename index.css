@@ -27,26 +27,29 @@ h1 {
 
 /* CONTAINERS */
 
-#start-game {
+#start-game,
+#players-setup-modal {
     width: 90%;
     margin: 0 auto;
 }
 
-/* START-GAME */
-
-#start-game {
-    outline: 1px solid orange;
-    flex-direction: column;
-    justify-content: center;
-    height: 90vh;
-}
-#start-game button {
+#start-game button,
+#players-setup-modal button {
     padding: 1rem;
     border-radius: .25rem;
     border: none;
     margin: 1rem 0;
     font-size: 1.25rem;
     font-weight: 600;
+}
+
+/* START-GAME */
+
+#start-game {
+    /* outline: 1px solid orange; */
+    flex-direction: column;
+    justify-content: center;
+    height: 90vh;
 }
 
 #start-game button:hover {
@@ -64,6 +67,10 @@ h1 {
 /* PLAYERS-SETUP-MODAL */
 
 #players-setup-modal {
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+}
+
+#add-player-done-btn {
+    background-color: orange;
 }

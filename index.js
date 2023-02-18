@@ -14,6 +14,7 @@ let playersArray = []
 
 // ⬇️ USER INTERFACE ⬇️
 
+// close startGameSection and open playersSetupModal (add players)
 addPlayerBtn.addEventListener("click", function() {
     console.log("Add Players")
     startGameSection.classList.add("none")
@@ -21,10 +22,12 @@ addPlayerBtn.addEventListener("click", function() {
     playersSetupModal.classList.add("flex")
 })
 
+// start game - go to 1st player's card
 startGameBtn.addEventListener("click", function() {
     console.log("Start game")
 })
 
+// close playersSetupModal and open startGameSection (done adding players)
 addPlayerDoneBtn.addEventListener("click", function() {
     console.log("Done Adding Players")
     playersSetupModal.classList.add("none")
@@ -33,12 +36,14 @@ addPlayerDoneBtn.addEventListener("click", function() {
     startGameSection.classList.add("flex")
 })
 
+// add new player to player list
 submitPlayerBtn.addEventListener("click", function() {
     handleAddNewPlayer()
 })
 
 // ⬇️ EVENT HANDLERS ⬇️
 
+// handle adding new player to player list
 function handleAddNewPlayer() {
     // no blank names
     if (!addPlayerNameInput.value) {

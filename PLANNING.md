@@ -15,7 +15,6 @@
     - Name
     - Score
     - Background is in player's color
-    - Buttons to go to next or previous player
 - Main card area
     - Show each type of sushi
         - Sushi's name at bottom
@@ -24,6 +23,10 @@
         - Subtract button decrements count
         - Show count overlaid in center of sushi's card
     - Have 2, 3 & 4 column grids
+- Bottom area
+    - Fixed position
+    - Buttons to go to next or previous player
+    - Button to End Round
 
 ## SCORE MODAL
 

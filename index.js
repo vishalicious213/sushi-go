@@ -66,7 +66,10 @@ function renderPlayersList() {
 
     playersArray.forEach(function(player) {
         modalPlayerList.innerHTML += `
-            <div class="player">${player}</div>
+            <div class="player">
+                <span>${player}</span>
+                <span data-delete="${player}">X</span>
+            </div>
         `
     })
 }

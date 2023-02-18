@@ -13,6 +13,8 @@
 
 - Top area
     - Name
+        - Include downward triangle icon
+        - Click name area to choose a different player
     - Score
     - Background is in player's color
 - Main card area
@@ -26,7 +28,7 @@
 - Bottom area
     - Fixed position
     - Buttons to go to next or previous player
-    - Button to End Round
+    - Button to End Round (End Round 1/3, End Round 2/3, etc.)
 
 ## SCORE MODAL
 

@@ -8,6 +8,8 @@ const addPlayerDoneBtn = document.getElementById("add-player-done-btn")
 // ADD-PLAYER-FORM
 const addPlayerNameInput = document.getElementById("add-player-name")
 const submitPlayerBtn = document.getElementById("submit-player-btn")
+// GLOBAL
+let playersArray = []
 
 // ⬇️ USER INTERFACE ⬇️
 
@@ -26,7 +28,8 @@ addPlayerDoneBtn.addEventListener("click", function() {
     startGameSection.classList.add("flex")
 })
 
-submitPlayerBtn.addEventListener("click", function(e) {
-    e.preventDefault()
-    console.log(addPlayerNameInput.value)
+submitPlayerBtn.addEventListener("click", function() {
+    playersArray.push(addPlayerNameInput.value)
+    addPlayerNameInput.value = ""
+    console.log(playersArray)
 })

@@ -21,7 +21,9 @@
 - Top area
     - Name
         - Include downward triangle icon
-        - Click name area to choose a different player
+        - Click name area to choose:
+            - A different player
+            - Info in SCORE MODAL section, below
     - Score
     - Background is in player's color
 - Main card area

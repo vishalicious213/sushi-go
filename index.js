@@ -10,7 +10,7 @@ const addPlayerDoneBtn = document.getElementById("add-player-done-btn")
 const addPlayerNameInput = document.getElementById("add-player-name")
 const colorsDiv = document.getElementById("colors")
 const submitPlayerBtn = document.getElementById("submit-player-btn")
-// PLAYER-CARDS
+// PLAYER-CARDS (main game)
 const playerCards = document.getElementById("player-cards")
 // GLOBAL
 let playersArray = []
@@ -33,6 +33,7 @@ startGameBtn.addEventListener("click", function() {
     startGameSection.classList.add("none")
     playerCards.classList.remove("none")
     playerCards.classList.add("flex")
+    renderCards(playersArray[0])
 })
 
 // close playersSetupModal and open startGameSection (done adding players)
@@ -128,4 +129,13 @@ function renderColors() {
             <div data-color="${color}" class="color" style="background-color:${color};"></div>
         `
     })
+}
+
+function renderCards(player) {
+    playerCards.innerHTML = `
+        <div class="card-header" style="background-color:${player.color};">
+            <div class="card-name">${player.name}</div>
+            <div class="card-score">0</div>
+        </div>
+    `
 }

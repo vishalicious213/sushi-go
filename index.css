@@ -149,3 +149,16 @@ h2 {
 .instruction {
     margin-bottom: .5rem;
 }
+
+/* PLAYER-CARDS */
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    width: 100%;
+    padding: .5rem;
+}
+
+.card-name {
+}

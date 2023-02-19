@@ -13,7 +13,7 @@ const submitPlayerBtn = document.getElementById("submit-player-btn")
 // GLOBAL
 let playersArray = []
 let selectedColor = ""
-const colorsArray = ["#ff00bf", "#ff0040", "#ff0000", "#ff4000", "#ffbf00", "#ffff00", "#bfff00", "#008000", "#00bfff", "#0040ff", "#4000ff", "#8000ff", "#bf00ff", "#f2f2f2", "#ccccff", "#000000"]
+const colorsArray = ["#ff00bf", "#C71585", "#ff0000", "#ff4000", "#ffbf00", "#ffd700", "#32CD32", "#008000", "#00bfff", "#00CED1", "#0040ff", "#8000ff", "#bf00ff", "#ccccff", "#808080", "#000000"]
 
 // ⬇️ USER INTERFACE ⬇️
 

@@ -110,7 +110,7 @@ function renderPlayersList() {
 
     playersArray.forEach(function(player) {
         modalPlayerList.innerHTML += `
-            <div class="player">
+            <div class="player" style="background-color:${player.color};">
                 <span>${player.name}</span>
                 <span class="delete-button" data-delete="${player.name}">X</span>
             </div>

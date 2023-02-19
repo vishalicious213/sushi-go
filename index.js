@@ -16,6 +16,7 @@ const playerCards = document.getElementById("player-cards")
 let playersArray = []
 let selectedColor = ""
 const colorsArray = ["#ff00bf", "#C71585", "#ff0000", "#ff4000", "#ffbf00", "#ffd700", "#32CD32", "#008000", "#00bfff", "#00CED1", "#0040ff", "#8000ff", "#bf00ff", "#ccccff", "#808080", "#000000"]
+const sushiArray = ["maki", "tempura", "sashimi", "dumpling", "egg-nigiri",	"wasabi-egg-nigiri","salmon-nigiri", "wasabi-salmon-nigiri", "squid-nigiri", "wasabi-squid-nigiri", "pudding"]
 
 // ⬇️ USER INTERFACE ⬇️
 
@@ -146,7 +147,7 @@ function renderCards(player) {
     playerCards.innerHTML = `
         <div class="card-header" style="background-color:${player.color};">
             <div class="card-name">${player.name}</div>
-            <div class="card-score">0</div>
+            <div class="card-score"></div>
         </div>
 
         <div class="sushi-cards">
@@ -155,7 +156,7 @@ function renderCards(player) {
                     <button type="button" id="maki-add">+</button>
                     <button type="button" id="maki-sub">-</button>
                 </div>
-                <div class="quantity"></div>
+                <div class="quantity">${player.maki}</div>
                 <div class="sushi-name">Maki</div>
             </div>
             <div class="sushi tempura"></div>

@@ -1,5 +1,5 @@
 body {
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -175,7 +175,8 @@ h2 {
 }
 
 .sushi {
-    outline: 1px solid black;
+    outline: 1px solid gainsboro;
+    border-radius: .5rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -187,6 +188,25 @@ h2 {
 .sushi-buttons {
     display: flex;
     justify-content: space-between;
+    padding: .25rem;
+}
+
+.sushi-buttons button {
+    font-size: 1.5rem;
+    width: 2rem;
+    border-radius: 50%;
+    border: none;
+}
+
+.quantity {
+    text-align: center;
+    font-size: 5rem;
+    font-weight: 500;
+    text-shadow: 0 0 0px black;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+    line-height: 4rem;
+    padding-bottom: .5rem;
 }
 
 .sushi-name {

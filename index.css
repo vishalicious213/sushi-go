@@ -187,7 +187,11 @@ h2 {
     background-position: center;
 }
 
-/* egg-nigiri */
+.egg-nigiri {
+    background-image: url("/img/sushi-egg-nigiri.jpg");
+    background-size: cover;
+    background-position: center;
+}
 
 .maki {
     background-image: url("/img/sushi-maki.png");

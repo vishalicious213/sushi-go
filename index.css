@@ -181,20 +181,16 @@ h2 {
     margin: .25rem;
 }
 
-.maki {
-    background-image: url("/img/sushi-maki.png");
-    background-size: cover;
-    background-position: center;
-}
-
-.tempura {
-    background-image: url("/img/sushi-tempura.png");
-    background-size: cover;
-    background-position: center;
-}
-
 .dumpling {
     background-image: url("/img/sushi-dumpling.png");
+    background-size: cover;
+    background-position: center;
+}
+
+/* egg-nigiri */
+
+.maki {
+    background-image: url("/img/sushi-maki.png");
     background-size: cover;
     background-position: center;
 }
@@ -223,8 +219,19 @@ h2 {
     background-position: center;
 }
 
+.tempura {
+    background-image: url("/img/sushi-tempura.png");
+    background-size: cover;
+    background-position: center;
+}
+
+/* not in use yet */
 .wasabi {
     background-image: url("/img/sushi-wasabi.png");
     background-size: cover;
     background-position: center;
 }
+
+/* wasabi-egg-nigiri */
+/* wasabi-salmon-nigiri */
+/* wasabi-squid-nigiri */

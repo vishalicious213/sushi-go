@@ -52,8 +52,8 @@ modalPlayerList.addEventListener("click", function(e) {
 })
 
 colorsDiv.addEventListener("click", function(e) {
-    if (e.target.dataset.color) {
-        handleAddColor(e.target.dataset.color)
+    if (e.target.dataset.color && addPlayerNameInput.value) {
+        handleAddColor(addPlayerNameInput.value, e.target.dataset.color)
     }
 })
 
@@ -81,8 +81,8 @@ function handleAddNewPlayer() {
 }
 
 // handle assigning a color to a player
-function handleAddColor(color) {
-    console.log(color)
+function handleAddColor(name, color) {
+    console.log(name, color)
 }
 
 // handle deleting player from player list

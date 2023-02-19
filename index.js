@@ -19,7 +19,6 @@ const colorsArray = ["#ff00bf", "#C71585", "#ff0000", "#ff4000", "#ffbf00", "#ff
 
 // close startGameSection and open playersSetupModal (add players)
 addPlayerBtn.addEventListener("click", function() {
-    console.log("Add Players")
     startGameSection.classList.add("none")
     playersSetupModal.classList.remove("none")
     playersSetupModal.classList.add("flex")
@@ -33,7 +32,6 @@ startGameBtn.addEventListener("click", function() {
 
 // close playersSetupModal and open startGameSection (done adding players)
 addPlayerDoneBtn.addEventListener("click", function() {
-    console.log("Done Adding Players")
     playersSetupModal.classList.add("none")
     playersSetupModal.classList.remove("flex")
     startGameSection.classList.remove("none")
@@ -86,7 +84,6 @@ function handleAddNewPlayer() {
             color: selectedColor
         })
         addPlayerNameInput.value = ""
-        console.log(playersArray)
         renderPlayersList()
     }
 }

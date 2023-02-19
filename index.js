@@ -67,14 +67,14 @@ function handleAddNewPlayer() {
     }
 
     // check if name exists (no duplicates)
-    const duplicate = playersArray.filter(function(name) {
-        return name === addPlayerNameInput.value
+    const duplicate = playersArray.filter(function(player) {
+        return player.name === addPlayerNameInput.value
     })
 
     if (duplicate.length > 0) {
         return
     } else {
-        playersArray.push(addPlayerNameInput.value)
+        playersArray.push({name: addPlayerNameInput.value})
         addPlayerNameInput.value = ""
         renderPlayersList()
     }
@@ -87,8 +87,8 @@ function handleAddColor(color) {
 
 // handle deleting player from player list
 function handleDeletePlayer(player) {
-    const playerToRemove = playersArray.filter(function(name) {
-        return name === player
+    const playerToRemove = playersArray.filter(function(playerInArray) {
+        return playerInArray.name === player
     })[0]
 
     const removalIndex = playersArray.indexOf(playerToRemove)
@@ -105,8 +105,8 @@ function renderPlayersList() {
     playersArray.forEach(function(player) {
         modalPlayerList.innerHTML += `
             <div class="player">
-                <span>${player}</span>
-                <span class="delete-button" data-delete="${player}">X</span>
+                <span>${player.name}</span>
+                <span class="delete-button" data-delete="${player.name}">X</span>
             </div>
         `
     })

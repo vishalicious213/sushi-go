@@ -180,3 +180,51 @@ h2 {
     width: 42vw;
     margin: .25rem;
 }
+
+.maki {
+    background-image: url("/img/sushi-maki.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.tempura {
+    background-image: url("/img/sushi-tempura.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.dumpling {
+    background-image: url("/img/sushi-dumpling.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.pudding {
+    background-image: url("/img/sushi-pudding.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.salmon-nigiri {
+    background-image: url("/img/sushi-salmon-nigiri.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.sashimi {
+    background-image: url("/img/sushi-sashimi.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.squid-nigiri {
+    background-image: url("/img/sushi-squid-nigiri.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.wasabi {
+    background-image: url("/img/sushi-wasabi.png");
+    background-size: cover;
+    background-position: center;
+}

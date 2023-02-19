@@ -150,25 +150,46 @@ function renderCards(player) {
             <div class="card-score"></div>
         </div>
 
-        <div class="sushi-cards">
-            <div class="sushi maki">
-                <div class="sushi-buttons">
-                    <button type="button" id="maki-add">+</button>
-                    <button type="button" id="maki-sub">-</button>
-                </div>
-                <div class="quantity">${player.maki}</div>
-                <div class="sushi-name">Maki</div>
-            </div>
-            <div class="sushi tempura"></div>
-            <div class="sushi sashimi"></div>
-            <div class="sushi dumpling"></div>
-            <div class="sushi egg-nigiri"></div>
-            <div class="sushi wasabi-egg-nigiri"></div>
-            <div class="sushi salmon-nigiri"></div>
-            <div class="sushi wasabi-salmon-nigiri"></div>
-            <div class="sushi squid-nigiri"></div>
-            <div class="sushi wasabi-squid-nigiri"></div>
-            <div class="sushi pudding"></div>
+        <div id="sushi-cards">
+
         </div>
     `
+
+    renderSushiCards(player)
+}
+
+function renderSushiCards(player) {
+    const sushiCards = document.getElementById("sushi-cards")
+    sushiCards.innerHTML = ""
+    console.log(player)
+
+    sushiArray.forEach(function(sushi) {
+        const sushiType = function() {
+            if (sushi === "dumpling") {return `${player.dumpling}`} else
+            if (sushi === "egg-nigiri") {return `${player.eggNigiri}`} else
+            if (sushi === "maki") {return `${player.maki}`} else
+            if (sushi === "pudding") {return `${player.pudding}`} else
+            if (sushi === "salmon-nigiri") {return `${player.salmonNigiri}`} else
+            if (sushi === "sashimi") {return `${player.sashimi}`} else
+            if (sushi === "squid-nigiri") {return `${player.squidNigiri}`} else
+            if (sushi === "tempura") {return `${player.tempura}`} else
+            if (sushi === "wasabi-egg-nigiri") {return `${player.wasabiEggNigiri}`} else
+            if (sushi === "wasabi-salmon-nigiri") {return `${player.wasabiSalmonNigiri}`} else
+            if (sushi === "wasabi-squid-nigiri") {return `${player.wasabiSquidNigiri}`}
+        }
+
+        let sushiQuantity = sushiType()
+        console.log(sushiQuantity)
+
+        sushiCards.innerHTML += `
+            <div class="sushi ${sushi}">
+                <div class="sushi-buttons">
+                    <button type="button" id="${sushi}-add">+</button>
+                    <button type="button" id="${sushi}-sub">-</button>
+                </div>
+                <div class="quantity">${sushiQuantity}</div>
+                <div class="sushi-name">${sushi}</div>
+            </div>
+        `
+    })
 }

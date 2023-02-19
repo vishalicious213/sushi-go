@@ -152,6 +152,15 @@ function renderCards(player) {
         <div class="sushi-cards">
             <div class="sushi maki"></div>
             <div class="sushi tempura"></div>
+            <div class="sushi sashimi"></div>
+            <div class="sushi dumpling"></div>
+            <div class="sushi egg-nigiri"></div>
+            <div class="sushi wasabi-egg-nigiri"></div>
+            <div class="sushi salmon-nigiri"></div>
+            <div class="sushi wasabi-salmon-nigiri"></div>
+            <div class="sushi squid-nigiri"></div>
+            <div class="sushi wasabi-squid-nigiri"></div>
+            <div class="sushi pudding"></div>
         </div>
     `
 }

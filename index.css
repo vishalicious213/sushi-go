@@ -229,13 +229,27 @@ h2 {
     background-position: center;
 }
 
+.wasabi-egg-nigiri {
+    background-image: url("/img/sushi-wasabi-egg-nigiri.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.wasabi-salmon-nigiri {
+    background-image: url("/img/sushi-wasabi-salmon-nigiri.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.wasabi-squid-nigiri {
+    background-image: url("/img/sushi-wasabi-squid-nigiri.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
 /* not in use yet */
 .wasabi {
     background-image: url("/img/sushi-wasabi.png");
     background-size: cover;
     background-position: center;
 }
-
-/* wasabi-egg-nigiri */
-/* wasabi-salmon-nigiri */
-/* wasabi-squid-nigiri */

@@ -6,7 +6,7 @@
             - ✓ Up to 10 letters
             - ✓ No blank names
             - ✓ No duplicate names
-        - Pick player color
+        - ✓ Pick player color
     - ✓ `Done`
         - ✓ Return to start screen
     - ✓ Show player list

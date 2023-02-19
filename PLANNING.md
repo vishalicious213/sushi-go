@@ -27,12 +27,12 @@
     - ✓ Score
     - ✓ Background is in player's color
 - Main card area
-    - Show each type of sushi
-        - Sushi's name at bottom
-        - Sushi's image as background
+    - ✓ Show each type of sushi
+        - ✓ Sushi's name at bottom
+        - ✓ Sushi's image as background
         - Add button increments count
         - Subtract button decrements count
-        - Show count overlaid in center of sushi's card
+        - ✓ Show count overlaid in center of sushi's card
     - Have 2, 3 & 4 column grids
 - Bottom area
     - Fixed position

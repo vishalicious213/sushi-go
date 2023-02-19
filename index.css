@@ -154,8 +154,9 @@ h2 {
 
 /* PLAYER-CARDS */
 
-/* #player-cards {
-} */
+#player-cards {
+    flex-direction: column;
+}
 
 .card-header {
     display: flex;
@@ -164,7 +165,18 @@ h2 {
     width: 100%;
     padding: .5rem;
     margin: 0;
+    box-sizing: border-box;
 }
 
-/* .card-name {
-} */
+.sushi-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.sushi {
+    outline: 1px solid black;
+    height: 18vh;
+    width: 42vw;
+    margin: .25rem;
+}

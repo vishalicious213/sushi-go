@@ -148,5 +148,10 @@ function renderCards(player) {
             <div class="card-name">${player.name}</div>
             <div class="card-score">0</div>
         </div>
+
+        <div class="sushi-cards">
+            <div class="sushi maki"></div>
+            <div class="sushi tempura"></div>
+        </div>
     `
 }

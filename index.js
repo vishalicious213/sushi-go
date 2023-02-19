@@ -150,7 +150,14 @@ function renderCards(player) {
         </div>
 
         <div class="sushi-cards">
-            <div class="sushi maki"></div>
+            <div class="sushi maki">
+                <div class="sushi-buttons">
+                    <button type="button" id="maki-add">+</button>
+                    <button type="button" id="maki-sub">-</button>
+                </div>
+                <div class="quantity"></div>
+                <div class="sushi-name">Maki</div>
+            </div>
             <div class="sushi tempura"></div>
             <div class="sushi sashimi"></div>
             <div class="sushi dumpling"></div>

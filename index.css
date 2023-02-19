@@ -176,9 +176,22 @@ h2 {
 
 .sushi {
     outline: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     height: 18vh;
     width: 40vw;
     margin: .25rem;
+}
+
+.sushi-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sushi-name {
+    text-align: center;
+    font-weight: 600;
 }
 
 .dumpling {

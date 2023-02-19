@@ -8,6 +8,7 @@ const modalPlayerList = document.getElementById("modal-player-list")
 const addPlayerDoneBtn = document.getElementById("add-player-done-btn")
 // ADD-PLAYER-FORM
 const addPlayerNameInput = document.getElementById("add-player-name")
+const colorsDiv = document.getElementById("colors")
 const submitPlayerBtn = document.getElementById("submit-player-btn")
 // GLOBAL
 let playersArray = []
@@ -47,6 +48,12 @@ submitPlayerBtn.addEventListener("click", function() {
 modalPlayerList.addEventListener("click", function(e) {
     if (e.target.dataset.delete) {
         handleDeletePlayer(e.target.dataset.delete)
+    }
+})
+
+colorsDiv.addEventListener("click", function(e) {
+    if (e.target.dataset.color) {
+        console.log(e.target.dataset.color)
     }
 })
 
@@ -101,7 +108,6 @@ function renderPlayersList() {
 }
 
 function renderColors() {
-    const colorsDiv = document.getElementById("colors")
     colorsDiv.innerHTML = ""
 
     colorsArray.forEach(function(color) {

@@ -12,6 +12,7 @@ const colorsDiv = document.getElementById("colors")
 const submitPlayerBtn = document.getElementById("submit-player-btn")
 // GLOBAL
 let playersArray = []
+let selectedColor = ""
 const colorsArray = ["#ff00bf", "#ff0040", "#ff0000", "#ff4000", "#ffbf00", "#ffff00", "#bfff00", "#008000", "#00bfff", "#0040ff", "#4000ff", "#8000ff", "#bf00ff", "#f2f2f2", "#ccccff", "#000000"]
 
 // ⬇️ USER INTERFACE ⬇️
@@ -51,9 +52,10 @@ modalPlayerList.addEventListener("click", function(e) {
     }
 })
 
+// store selected color in selectedColor
 colorsDiv.addEventListener("click", function(e) {
-    if (e.target.dataset.color && addPlayerNameInput.value) {
-        handleAddColor(addPlayerNameInput.value, e.target.dataset.color)
+    if (e.target.dataset.color) {
+        selectedColor = e.target.dataset.color
     }
 })
 
@@ -66,6 +68,11 @@ function handleAddNewPlayer() {
         return
     }
 
+    // have to pick a color
+    if (!selectedColor) {
+        return
+    }
+
     // check if name exists (no duplicates)
     const duplicate = playersArray.filter(function(player) {
         return player.name === addPlayerNameInput.value
@@ -74,15 +81,14 @@ function handleAddNewPlayer() {
     if (duplicate.length > 0) {
         return
     } else {
-        playersArray.push({name: addPlayerNameInput.value})
+        playersArray.push({
+            name: addPlayerNameInput.value,
+            color: selectedColor
+        })
         addPlayerNameInput.value = ""
+        console.log(playersArray)
         renderPlayersList()
     }
-}
-
-// handle assigning a color to a player
-function handleAddColor(name, color) {
-    console.log(name, color)
 }
 
 // handle deleting player from player list

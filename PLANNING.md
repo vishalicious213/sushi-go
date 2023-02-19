@@ -19,13 +19,13 @@
 ## PLAYER CARDS (SCORECARD)
 
 - Top area
-    - Name
+    - ✓ Name
         - Include downward triangle icon
         - Click name area to choose:
             - A different player
             - Info in SCORE MODAL section, below
-    - Score
-    - Background is in player's color
+    - ✓ Score
+    - ✓ Background is in player's color
 - Main card area
     - Show each type of sushi
         - Sushi's name at bottom

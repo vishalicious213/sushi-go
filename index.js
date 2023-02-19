@@ -87,7 +87,18 @@ function handleAddNewPlayer() {
     } else {
         playersArray.push({
             name: addPlayerNameInput.value,
-            color: selectedColor
+            color: selectedColor,
+            maki: 0,
+            tempura: 0,
+            sashimi: 0,
+            dumpling: 0,
+            eggNigiri: 0,
+            salmonNigiri: 0,
+            squidNigiri: 0,
+            wasabiEggNigiri: 0,
+            wasabiSalmonNigiri: 0,
+            wasabiSquidNigiri: 0,
+            pudding: 0
         })
         addPlayerNameInput.value = ""
         renderPlayersList()

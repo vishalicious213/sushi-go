@@ -15,6 +15,7 @@
     - Edit player's color
 - `Start game`
     - Goes to first player's scorecard
+    - If there are no players, do nothing
 
 ## PLAYER CARDS (SCORECARD)
 

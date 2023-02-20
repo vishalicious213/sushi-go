@@ -30,7 +30,8 @@ addPlayerBtn.addEventListener("click", function() {
 
 // start game - go to 1st player's card
 startGameBtn.addEventListener("click", function() {
-    console.log("Start game")
+    if (playersArray.length === 0) return
+
     startGameSection.classList.add("none")
     playerCards.classList.remove("none")
     playerCards.classList.add("flex")

@@ -13,7 +13,38 @@ const submitPlayerBtn = document.getElementById("submit-player-btn")
 // PLAYER-CARDS (main game)
 const playerCards = document.getElementById("player-cards")
 // GLOBAL
-let playersArray = []
+let playersArray = [
+    {
+        name: "Vish",
+        color: "#000000",
+        maki: 0,
+        tempura: 0,
+        sashimi: 0,
+        dumpling: 0,
+        eggNigiri: 0,
+        salmonNigiri: 0,
+        squidNigiri: 0,
+        wasabiEggNigiri: 0,
+        wasabiSalmonNigiri: 0,
+        wasabiSquidNigiri: 0,
+        pudding: 0
+    },
+    {
+        name: "Sue",
+        color: "#ff0000",
+        maki: 0,
+        tempura: 0,
+        sashimi: 0,
+        dumpling: 0,
+        eggNigiri: 0,
+        salmonNigiri: 0,
+        squidNigiri: 0,
+        wasabiEggNigiri: 0,
+        wasabiSalmonNigiri: 0,
+        wasabiSquidNigiri: 0,
+        pudding: 0
+    }
+]
 let selectedColor = ""
 const colorsArray = ["#ff00bf", "#C71585", "#ff0000", "#ff4000", "#ffbf00", "#ffd700", "#32CD32", "#008000", "#00bfff", "#00CED1", "#0040ff", "#8000ff", "#bf00ff", "#ccccff", "#808080", "#000000"]
 const sushiArray = ["maki", "tempura", "sashimi", "dumpling", "egg-nigiri",	"wasabi-egg-nigiri","salmon-nigiri", "wasabi-salmon-nigiri", "squid-nigiri", "wasabi-squid-nigiri", "pudding"]

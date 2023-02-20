@@ -157,6 +157,16 @@ function handleDeletePlayer(player) {
 // handle changing players (called from renderCards())
 function handleChangePlayer() {
     const selectPlayer = document.getElementById("select-player")
+
+    for (let i = 0; i < playersArray.length; i++) {
+        let playerOption = playersArray[i].name
+        let playerElement = document.createElement("option")
+
+        playerElement.textContent = playerOption
+        playerElement.value = playerOption
+        selectPlayer.appendChild(playerElement)
+    }
+
     selectPlayer.addEventListener("click", function() {
         console.log("select player")
     })

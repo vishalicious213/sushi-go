@@ -12,6 +12,7 @@ const colorsDiv = document.getElementById("colors")
 const submitPlayerBtn = document.getElementById("submit-player-btn")
 // PLAYER-CARDS (main game)
 const playerCards = document.getElementById("player-cards")
+// const selectPlayer = document.getElementById("select-player")
 // GLOBAL
 let playersArray = [
     {
@@ -96,6 +97,10 @@ colorsDiv.addEventListener("click", function(e) {
     }
 })
 
+// selectPlayer.addEventListener("click", function() {
+//     console.log("select player")
+// })
+
 // ⬇️ EVENT HANDLERS ⬇️
 
 // handle adding new player to player list
@@ -147,7 +152,14 @@ function handleDeletePlayer(player) {
     const removalIndex = playersArray.indexOf(playerToRemove)
     playersArray.splice(removalIndex, 1)
     renderPlayersList()
+}
 
+// handle changing players (called from renderCards())
+function handleChangePlayer() {
+    const selectPlayer = document.getElementById("select-player")
+    selectPlayer.addEventListener("click", function() {
+        console.log("select player")
+    })
 }
 
 // ⬇️ RENDER THE APP ⬇️
@@ -193,6 +205,7 @@ function renderCards(player) {
     `
 
     renderSushiCards(player)
+    handleChangePlayer()
 }
 
 // render players' sushi cards for main player screens

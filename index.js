@@ -176,11 +176,14 @@ function renderColors() {
     })
 }
 
+{/* <div class="card-name">▼ ${player.name}</div> */}
+
 // render players for main player screens
 function renderCards(player) {
     playerCards.innerHTML = `
         <div class="card-header" style="background-color:${player.color};">
-            <div class="card-name">${player.name}</div>
+
+            <select id="select-player" name="select-player"></select>
             <div class="card-score"></div>
         </div>
 

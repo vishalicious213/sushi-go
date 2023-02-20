@@ -167,7 +167,7 @@ function handleChangePlayer() {
         selectPlayer.appendChild(playerElement)
     }
 
-    selectPlayer.addEventListener("click", function() {
+    selectPlayer.addEventListener("change", function() {
         console.log(selectPlayer.value)
         // renderCards(selectPlayer.value)
         const selectedPlayer = playersArray.filter(function(playerInArray) {

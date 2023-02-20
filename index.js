@@ -33,7 +33,7 @@ let playersArray = [
     {
         name: "Sue",
         color: "#ff0000",
-        maki: 0,
+        maki: 1,
         tempura: 0,
         sashimi: 0,
         dumpling: 0,
@@ -168,8 +168,17 @@ function handleChangePlayer() {
     }
 
     selectPlayer.addEventListener("click", function() {
-        console.log("select player")
+        console.log(selectPlayer.value)
+        // renderCards(selectPlayer.value)
+        const selectedPlayer = playersArray.filter(function(playerInArray) {
+            return playerInArray.name === selectPlayer.value
+        })[0]
+        handleSelectPlayer(selectedPlayer)
     })
+
+    function handleSelectPlayer(player) {
+        renderCards(player)
+    }
 }
 
 // ⬇️ RENDER THE APP ⬇️
@@ -240,7 +249,7 @@ function renderSushiCards(player) {
         }
 
         let sushiQuantity = sushiType()
-        console.log(sushiQuantity)
+        // console.log(sushiQuantity)
 
         sushiCards.innerHTML += `
             <div class="sushi ${sushi}">

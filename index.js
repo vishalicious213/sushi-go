@@ -165,6 +165,7 @@ function renderPlayersList() {
     })
 }
 
+// colors for 'add players'
 function renderColors() {
     colorsDiv.innerHTML = ""
 
@@ -175,6 +176,7 @@ function renderColors() {
     })
 }
 
+// render players for main player screens
 function renderCards(player) {
     playerCards.innerHTML = `
         <div class="card-header" style="background-color:${player.color};">
@@ -190,6 +192,7 @@ function renderCards(player) {
     renderSushiCards(player)
 }
 
+// render players' sushi cards for main player screens
 function renderSushiCards(player) {
     const sushiCards = document.getElementById("sushi-cards")
     sushiCards.innerHTML = ""

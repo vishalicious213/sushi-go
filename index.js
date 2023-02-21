@@ -247,13 +247,13 @@ function handleSushiCount(player) {
 }
 
 function handleScore(player) {
-    console.log("handleScore")
     const cardScore = document.getElementById("card-score")
     let total = 0
 
     let eggNigiriScore = player.eggNigiri
+    let salmonNigiriScore = player.salmonNigiri * 2
 
-    let scores = [eggNigiriScore]
+    let scores = [eggNigiriScore, salmonNigiriScore]
 
     scores.forEach(function(score) {
         total += score

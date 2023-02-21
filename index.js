@@ -376,6 +376,12 @@ function calculateMakiScore(player) {
     })
     console.log('players with maxMakiScore', highs)
 
+    // get players with secondMakiScore
+    const seconds = playersArray.filter(function(playerInArray) {
+        return playerInArray.maki === secondMakiScore
+    })
+    console.log('players with secondMakiScore', seconds)
+
     // check if other players have high score (highs, above)
     // if no, return 6
     if (highs.length === 1) {

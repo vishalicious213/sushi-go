@@ -325,6 +325,11 @@ function calculateMakiScore(player) {
     let maxMakiScore = 0
     let secondMakiScore = 0
 
+    if (player.maki === 0) {
+        console.log("no maki")
+        return
+    }
+
     // get maxMakiScore
     playersArray.map(function(playerInArray) {
         if (playerInArray.maki > maxMakiScore) {

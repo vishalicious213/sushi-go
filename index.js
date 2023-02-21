@@ -194,23 +194,6 @@ function handleSushiCount(player) {
     const tempuraQty = document.getElementById("tempura-quantity")
 
     sushiCards.addEventListener("click", function(e) {
-        // if (e.target.id === `maki-add`) {
-        //     player.maki += 1
-        //     makiQty.textContent = player.maki
-        // } else if (e.target.id === `maki-sub`) {
-        //     player.maki -= 1
-        //     if (player.maki < 0) {player.maki = 0}
-        //     makiQty.textContent = player.maki
-        // } else if (e.target.id === `tempura-add`) {
-        //     player.tempura += 1
-        //     tempuraQty.textContent = player.tempura
-        // } else if (e.target.id === `tempura-sub`) {
-        //     player.tempura -= 1
-        //     if (player.tempura < 0) {player.tempura = 0}
-        //     tempuraQty.textContent = player.tempura
-        // }
-        
-
         let pieces = ["maki", "tempura", "sashimi", "dumpling"]
         let newPiece = ""
 
@@ -222,7 +205,6 @@ function handleSushiCount(player) {
             if (piece === "squid-nigiri") {newPiece = "squidNigiri"}
             if (piece === "wasabi-squid-nigiri") {newPiece = "wasabiSquidNigiri"}
 
-            // console.log(piece)
             if (e.target.id === `${piece}-add`) {
                 console.log(piece)
                 if (player[piece] >= 0) {
@@ -236,18 +218,23 @@ function handleSushiCount(player) {
                     console.log(player[newPiece])
                     document.getElementById(`${piece}-quantity`).textContent = player[newPiece]
                 }
+            }
 
-                
-                // player[piece] += 1
-                // console.log(player[piece])
-                // if (document.getElementById(`${piece}-quantity`)) {
-                //     document.getElementById(`${piece}-quantity`).textContent = player[piece]
-                // } else {
-                //     document.getElementById(`${piece}-quantity`).textContent = "player[newPiece]"
-                // }
-
-
-                // document.getElementById(`${piece}-quantity`).textContent = player[piece]
+            if (e.target.id === `${piece}-sub`) {
+                console.log(piece)
+                if (player[piece] >= 0) {
+                    console.log(piece, "exists")
+                    player[piece] -= 1
+                    if (player[piece] < 0) {player[piece] = 0}
+                    console.log(player[piece])
+                    document.getElementById(`${piece}-quantity`).textContent = player[piece]
+                } else {
+                    console.log(newPiece, "exists")
+                    player[newPiece] -= 1
+                    if (player[newPiece] < 0) {player[newPiece] = 0}
+                    console.log(player[newPiece])
+                    document.getElementById(`${piece}-quantity`).textContent = player[newPiece]
+                }
             }
         })
     })

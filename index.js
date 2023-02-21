@@ -265,15 +265,16 @@ function handleScore(player) {
     let dumplingScore = calculateDumplingScore(player.dumpling)
     let tempuraScore = calculateTempuraScore(player.tempura)
     let sashimiScore = calculateSashimiScore(player.sashimi)
+    let makiScore = calculateMakiScore(player)
 
-    let scores = [eggNigiriScore, salmonNigiriScore, squidNigiriScore, wasabiEggNigiriScore, wasabiSalmonNigiriScore, wasabiSquidNigiriScore, dumplingScore, tempuraScore, sashimiScore]
+    let scores = [eggNigiriScore, salmonNigiriScore, squidNigiriScore, wasabiEggNigiriScore, wasabiSalmonNigiriScore, wasabiSquidNigiriScore, dumplingScore, tempuraScore, sashimiScore, makiScore]
 
     scores.forEach(function(score) {
         total += score
     })
 
     console.log('total', total)
-    calculateMakiScore(player)
+    // calculateMakiScore(player)
 
     player.totalScore = total
     cardScore.textContent = player.totalScore
@@ -362,6 +363,8 @@ function calculateMakiScore(player) {
     // if 3 others, -2 from all 3, +1 to all 4
 
     // if 4 players, +1 to last
+
+    return addMakiPoints
 
 
 

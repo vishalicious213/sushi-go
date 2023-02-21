@@ -57,6 +57,7 @@ addPlayerBtn.addEventListener("click", function() {
     startGameSection.classList.add("none")
     playersSetupModal.classList.remove("none")
     playersSetupModal.classList.add("flex")
+    renderPlayersList()
     renderColors()
 })
 
@@ -191,6 +192,11 @@ function handleChangeSelect(name) {
 
 function renderPlayersList() {
     modalPlayerList.innerHTML = ""
+
+    if (playersArray.length === 0) {
+        modalPlayerList.innerHTML = "Enter player names and choose player colors."
+        return
+    }
 
     playersArray.forEach(function(player) {
         modalPlayerList.innerHTML += `

@@ -97,10 +97,6 @@ colorsDiv.addEventListener("click", function(e) {
     }
 })
 
-// selectPlayer.addEventListener("click", function() {
-//     console.log("select player")
-// })
-
 // ⬇️ EVENT HANDLERS ⬇️
 
 // handle adding new player to player list
@@ -168,26 +164,22 @@ function handleChangePlayer() {
         selectPlayer.appendChild(playerElement)
     }
 
+    // listen for changes to player in drop-down
     selectPlayer.addEventListener("change", function() {
-        console.log(selectPlayer.value)
-        // renderCards(selectPlayer.value)
         const selectedPlayer = playersArray.filter(function(playerInArray) {
             return playerInArray.name === selectPlayer.value
         })[0]
-        console.log(playersArray)
-        console.log(selectedPlayer)
         handleSelectPlayer(selectedPlayer)
     })
 
+    // render the selected player
     function handleSelectPlayer(player) {
-        console.log(player)
         renderCards(player)
-        selectPlayer.value = player.name
-        console.log(selectPlayer.value)
-        console.log(player)
+        handleChangeSelect(player.name)
     }
 }
 
+// change the player's name in the drop-down in #select-player (renderCards())
 function handleChangeSelect(name) {
     const selectPlayer = document.getElementById("select-player")
     const playerOptions = Array.from(selectPlayer.options)
@@ -210,7 +202,7 @@ function renderPlayersList() {
     })
 }
 
-// colors for 'add players'
+// render colors for 'add players'
 function renderColors() {
     colorsDiv.innerHTML = ""
 
@@ -221,32 +213,26 @@ function renderColors() {
     })
 }
 
-{/* <div class="card-name">▼ ${player.name}</div> */}
-
 // render players for main player screens
 function renderCards(player) {
     playerCards.innerHTML = `
         <div class="card-header" style="background-color:${player.color};">
-
             <select id="select-player" name="select-player"></select>
             <div class="card-score"></div>
         </div>
 
-        <div id="sushi-cards">
-
-        </div>
+        <div id="sushi-cards"></div>
     `
 
     renderSushiCards(player)
     handleChangePlayer()
-    handleChangeSelect(player.name)
 }
 
 // render players' sushi cards for main player screens
 function renderSushiCards(player) {
     const sushiCards = document.getElementById("sushi-cards")
     sushiCards.innerHTML = ""
-    console.log(player)
+    // console.log(player)
 
     sushiArray.forEach(function(sushi) {
         const sushiType = function() {

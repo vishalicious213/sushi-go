@@ -271,7 +271,6 @@ function handleScore(player) {
     cardScore.textContent = player.totalScore
 
     // maki: 0,
-    // tempura: 0, every 2 = 5pts
     // sashimi: 0,
     // pudding: 0
 }
@@ -285,17 +284,21 @@ function formatSushiName(sushi) {
 }
 
 function calculateDumplingScore(count) {
+    let points = 0
+
     if (count === 1) {
-        return 1
+        points = 1
     } else if (count === 2) {
-        return 3
+        points = 3
     } else if (count === 3) {
-        return 6
+        points = 6
     } else if (count === 4) {
-        return 10
+        points = 10
     } else if (count >= 5) {
-        return 15
+        points = 15
     }
+
+    return points
 }
 
 function calculateTempuraScore(count) {

@@ -317,7 +317,6 @@ function calculateSashimiScore(count) {
 
 function calculateMakiScore() {
     let maxMakiScore = 0
-    let highest = []
 
     playersArray.map(function(player) {
         if (player.maki > maxMakiScore) {
@@ -327,6 +326,12 @@ function calculateMakiScore() {
         }
     })
     console.log(maxMakiScore)
+
+    const highs = playersArray.filter(function(player) {
+        return player.maki === maxMakiScore
+    })
+    console.log(highs)
+
 
     // const makiScores = []
 

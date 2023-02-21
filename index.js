@@ -339,9 +339,12 @@ function calculateMakiScore() {
     })
     console.log(highs)
 
-    // if (highs.length === 1) {
-    //     highs[0]
-    // }
+    playersArray.forEach(function(player) {
+        if (highs.includes(player)) {
+            console.log("in highs", player)
+        }
+    })
+
 
 
     // most = 6

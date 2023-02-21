@@ -43,8 +43,8 @@ let playersArray = [
         round2: 0,
         round3: 0,
         totalScore: 0,
-        maki: 1,
-        tempura: 0,
+        maki: 0,
+        tempura: 1,
         sashimi: 0,
         dumpling: 0,
         eggNigiri: 0,
@@ -327,6 +327,7 @@ function calculateMakiScore(player) {
     let secondMakiScore = 0
     let addMakiPoints = 0
     let subMakiPoints = 0
+    let otherHighMakis = []
 
     if (player.maki === 0) {
         console.log("no maki")
@@ -351,13 +352,17 @@ function calculateMakiScore(player) {
     // if no, return 6
     if (highs.length === 1) {
         console.log(`${highs[0].name} is only high score`)
+        if (otherHighMakis.length > 0 && otherHighMakis[0].name != player.name) {
+            console.log("previous highs", otherHighMakis)
+            otherHighMakis[0].totalScore -= 6
+        }
         addMakiPoints = 6
     }
 
     // if 1 other, -6 from that player, +3 to both
     if (highs.length === 2) {
         console.log(`highs: ${highs[0].name}, ${highs[1].name}`)
-        const otherHighMakis = playersArray.filter(function(playerInArray) {
+        otherHighMakis = playersArray.filter(function(playerInArray) {
             return playerInArray.maki === maxMakiScore && playerInArray.name != player.name
         })
         console.log("others", otherHighMakis)

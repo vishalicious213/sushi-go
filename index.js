@@ -267,12 +267,15 @@ function handleScore(player) {
     })
 
     console.log('total', total)
+    calculateMakiScore()
 
     player.totalScore = total
     cardScore.textContent = player.totalScore
 
-    // maki: 0,
-    // sashimi: 0, set of 3 is 10 points
+    // maki: 0, most = 6, 2nd = 3, split ties
+        // most = 6
+        // most = 6 (split ties), no 2nd place
+        // most = 6, 2nd = 3 (split ties)
     // pudding: 0
 }
 
@@ -310,6 +313,24 @@ function calculateTempuraScore(count) {
 function calculateSashimiScore(count) {
     const pieces = Math.floor(count / 3)
     return (pieces * 10)
+}
+
+function calculateMakiScore() {
+    const makiScores = []
+
+    playersArray.forEach(function(player) {
+        makiScores.push({
+            name: player.name,
+            maki: player.maki
+        })
+    })
+
+
+    console.log(makiScores)
+
+    // most = 6
+    // most = 6 (split ties), no 2nd place
+    // most = 6, 2nd = 3 (split ties)
 }
 
 // ⬇️ RENDER THE APP ⬇️

@@ -193,10 +193,13 @@ function handleSushiCount(player) {
 
     sushiCards.addEventListener("click", function(e) {
         if (e.target.id === `maki-add`) {
+            player.maki += 1
             console.log(player, "add")
         }
 
         if (e.target.id === `maki-sub`) {
+            player.maki -= 1
+            if (player.maki < 0) {player.maki = 0}
             console.log(player, "sub")
         }
     })

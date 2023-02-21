@@ -386,11 +386,18 @@ function calculateMakiScore(player) {
     // if no, return 6
     if (highs.length === 1) {
         console.log(`${highs[0].name} is only high score`)
+        addMakiPoints = 6
+
         if (otherHighMakis.length > 0 && otherHighMakis[0].name != player.name) {
             console.log("previous highs", otherHighMakis)
             otherHighMakis[0].totalScore -= 6
         }
-        addMakiPoints = 6
+
+        // if only 1 high, allow seconds
+        if (seconds.length === 1) {
+            console.log(`${seconds[0].name} is only 2nd score`)
+        }
+
     }
 
     // if 1 other, -6 from that player, +3 to both

@@ -188,6 +188,14 @@ function handleChangeSelect(name) {
     optionToSelect.selected = true
 }
 
+// ⬇️ HELPERS ⬇️
+
+function formatSushiName(sushi) {
+    console.log(sushi)
+    const sushiName = sushi.toUpperCase()
+    return sushiName
+}
+
 // ⬇️ RENDER THE APP ⬇️
 
 function renderPlayersList() {
@@ -265,7 +273,7 @@ function renderSushiCards(player) {
                     <button type="button" id="${sushi}-sub">-</button>
                 </div>
                 <div class="quantity">${sushiQuantity}</div>
-                <div class="sushi-name">${sushi}</div>
+                <div class="sushi-name">${formatSushiName(sushi)}</div>
             </div>
         `
     })

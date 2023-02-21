@@ -340,7 +340,15 @@ function calculateMakiScore(player) {
     console.log(highs)
 
     // check if other players have high score
-    // if no, 
+    // if no, return 6
+
+    // if 1 other, -6 from that player, +3 to both
+
+    // if 2 others, -3 from both, +2 to all 3
+
+    // if 3 others, -2 from all 3, +1 to all 4
+
+    // if 4 players, +1 to last
 
 
 

@@ -190,17 +190,20 @@ function handleChangeSelect(name) {
 
 function handleSushiCount(player) {
     const sushiCards = document.getElementById("sushi-cards")
+    const makiQty = document.getElementById("maki-quantity")
 
     sushiCards.addEventListener("click", function(e) {
         if (e.target.id === `maki-add`) {
             player.maki += 1
             console.log(player, "add")
+            makiQty.textContent = player.maki
         }
 
         if (e.target.id === `maki-sub`) {
             player.maki -= 1
             if (player.maki < 0) {player.maki = 0}
             console.log(player, "sub")
+            makiQty.textContent = player.maki
         }
     })
 }
@@ -289,7 +292,7 @@ function renderSushiCards(player) {
                     <button type="button" id="${sushi}-add">+</button>
                     <button type="button" id="${sushi}-sub">-</button>
                 </div>
-                <div class="quantity">${sushiQuantity}</div>
+                <div class="quantity" id="${sushi}-quantity">${sushiQuantity}</div>
                 <div class="sushi-name">${formatSushiName(sushi)}</div>
             </div>
         `

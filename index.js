@@ -190,6 +190,7 @@ function handleChangeSelect(name) {
 
 // ⬇️ HELPERS ⬇️
 
+// format sushi names for render onto cards
 function formatSushiName(sushi) {
     const sushiName = sushi.toUpperCase().replace(/-/g, " ")
     return sushiName

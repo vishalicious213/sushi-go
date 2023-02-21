@@ -253,8 +253,9 @@ function handleScore(player) {
     let eggNigiriScore = player.eggNigiri
     let salmonNigiriScore = player.salmonNigiri * 2
     let squidNigiriScore = player.squidNigiri * 3
+    let wasabiEggNigiriScore = player.wasabiEggNigiri * 3
 
-    let scores = [eggNigiriScore, salmonNigiriScore, squidNigiriScore]
+    let scores = [eggNigiriScore, salmonNigiriScore, squidNigiriScore, wasabiEggNigiriScore]
 
     scores.forEach(function(score) {
         total += score
@@ -269,9 +270,6 @@ function handleScore(player) {
     // tempura: 0,
     // sashimi: 0,
     // dumpling: 0,
-    // eggNigiri: 0,
-    // salmonNigiri: 0,
-    // squidNigiri: 0,
     // wasabiEggNigiri: 0,
     // wasabiSalmonNigiri: 0,
     // wasabiSquidNigiri: 0,

@@ -351,6 +351,7 @@ function calculateMakiScore(player) {
     // if no, return 6
     if (highs.length === 1) {
         console.log(`${highs[0].name} is only high score`)
+        addMakiPoints = 6
     }
 
     // if 1 other, -6 from that player, +3 to both

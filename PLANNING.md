@@ -31,9 +31,10 @@
     - ✓ Show each type of sushi
         - ✓ Sushi's name at bottom
         - ✓ Sushi's image as background
-        - Add button increments count
-        - Subtract button decrements count
+        - ✓ Add button increments count
+        - ✓ Subtract button decrements count
         - ✓ Show count overlaid in center of sushi's card
+    - Incrementing/decrementing sushi updates score
     - Have 2, 3 & 4 column grids
 - Bottom area
     - Fixed position

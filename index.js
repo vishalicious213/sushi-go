@@ -190,11 +190,8 @@ function handleChangeSelect(name) {
 
 function handleSushiCount(player) {
     const sushiCards = document.getElementById("sushi-cards")
-    const makiQty = document.getElementById("maki-quantity")
-    const tempuraQty = document.getElementById("tempura-quantity")
 
     sushiCards.addEventListener("click", function(e) {
-        let pieces = ["maki", "tempura", "sashimi", "dumpling"]
         let newPiece = ""
 
         sushiArray.forEach(function(piece) {
@@ -206,33 +203,23 @@ function handleSushiCount(player) {
             if (piece === "wasabi-squid-nigiri") {newPiece = "wasabiSquidNigiri"}
 
             if (e.target.id === `${piece}-add`) {
-                console.log(piece)
                 if (player[piece] >= 0) {
-                    console.log(piece, "exists")
                     player[piece] += 1
-                    console.log(player[piece])
                     document.getElementById(`${piece}-quantity`).textContent = player[piece]
                 } else {
-                    console.log(newPiece, "exists")
                     player[newPiece] += 1
-                    console.log(player[newPiece])
                     document.getElementById(`${piece}-quantity`).textContent = player[newPiece]
                 }
             }
 
             if (e.target.id === `${piece}-sub`) {
-                console.log(piece)
                 if (player[piece] >= 0) {
-                    console.log(piece, "exists")
                     player[piece] -= 1
                     if (player[piece] < 0) {player[piece] = 0}
-                    console.log(player[piece])
                     document.getElementById(`${piece}-quantity`).textContent = player[piece]
                 } else {
-                    console.log(newPiece, "exists")
                     player[newPiece] -= 1
                     if (player[newPiece] < 0) {player[newPiece] = 0}
-                    console.log(player[newPiece])
                     document.getElementById(`${piece}-quantity`).textContent = player[newPiece]
                 }
             }

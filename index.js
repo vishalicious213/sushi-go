@@ -38,7 +38,7 @@ let playersArray = [
     },
     {
         name: "Sue",
-        color: "#ff0000",
+        color: "#ffbf00",
         round1: 0,
         round2: 0,
         round3: 0,
@@ -46,6 +46,27 @@ let playersArray = [
         maki: 0,
         tempura: 1,
         sashimi: 0,
+        dumpling: 0,
+        eggNigiri: 0,
+        salmonNigiri: 0,
+        squidNigiri: 0,
+        wasabiEggNigiri: 0,
+        wasabiSalmonNigiri: 0,
+        wasabiSquidNigiri: 0,
+        pudding: 0,
+        mostMaki: false,
+        secondMaki: false
+    },
+    {
+        name: "Mika",
+        color: "#ff0000",
+        round1: 0,
+        round2: 0,
+        round3: 0,
+        totalScore: 0,
+        maki: 0,
+        tempura: 0,
+        sashimi: 1,
         dumpling: 0,
         eggNigiri: 0,
         salmonNigiri: 0,
@@ -365,12 +386,22 @@ function calculateMakiScore(player) {
         otherHighMakis = playersArray.filter(function(playerInArray) {
             return playerInArray.maki === maxMakiScore && playerInArray.name != player.name
         })
-        console.log("others", otherHighMakis)
+        console.log("others (2)", otherHighMakis)
         otherHighMakis[0].totalScore -= 3
         addMakiPoints = 3
     }
 
     // if 2 others, -3 from both, +2 to all 3
+    if (highs.length === 3) {
+        console.log(`highs: ${highs[0].name}, ${highs[1].name}, ${highs[2].name}`)
+        otherHighMakis = playersArray.filter(function(playerInArray) {
+            return playerInArray.maki === maxMakiScore && playerInArray.name != player.name
+        })
+        console.log("others (3)", otherHighMakis)
+        otherHighMakis[0].totalScore -= 1
+        otherHighMakis[1].totalScore -= 1
+        addMakiPoints = 2
+    }
 
     // if 3 others, -2 from all 3, +1 to all 4
 

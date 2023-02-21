@@ -341,7 +341,11 @@ function calculateMakiScore() {
 
     playersArray.forEach(function(player) {
         if (highs.includes(player)) {
+            player.mostMaki = true
             console.log("in highs", player)
+        } else {
+            player.mostMaki = false
+            console.log("not high", player)
         }
     })
 

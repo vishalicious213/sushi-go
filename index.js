@@ -285,7 +285,7 @@ function renderCards(player) {
     playerCards.innerHTML = `
         <div class="card-header" style="background-color:${player.color};">
             <select id="select-player" name="select-player"></select>
-            <div class="card-score"></div>
+            <div class="card-score">${player.totalScore}</div>
         </div>
 
         <div id="sushi-cards"></div>

@@ -25,7 +25,7 @@
         - Click name area to choose:
             - ✓ A different player
             - Info in SCORE MODAL section, below
-    - Score
+    - ✓ Total score
     - ✓ Background is in player's color
 - Main card area
     - ✓ Show each type of sushi

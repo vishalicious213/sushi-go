@@ -32,7 +32,9 @@ let playersArray = [
         wasabiEggNigiri: 0,
         wasabiSalmonNigiri: 0,
         wasabiSquidNigiri: 0,
-        pudding: 0
+        pudding: 0,
+        mostMaki: false,
+        secondMaki: false
     },
     {
         name: "Sue",
@@ -51,7 +53,9 @@ let playersArray = [
         wasabiEggNigiri: 0,
         wasabiSalmonNigiri: 0,
         wasabiSquidNigiri: 0,
-        pudding: 0
+        pudding: 0,
+        mostMaki: false,
+        secondMaki: false
     }
 ]
 let selectedColor = ""
@@ -146,7 +150,9 @@ function handleAddNewPlayer() {
             wasabiEggNigiri: 0,
             wasabiSalmonNigiri: 0,
             wasabiSquidNigiri: 0,
-            pudding: 0
+            pudding: 0,
+            mostMaki: false,
+            secondMaki: false
         })
         addPlayerNameInput.value = ""
         renderPlayersList()
@@ -317,32 +323,26 @@ function calculateSashimiScore(count) {
 
 function calculateMakiScore() {
     let maxMakiScore = 0
+    let secondMakiScore = 0
 
+    // get maxMakiScore
     playersArray.map(function(player) {
         if (player.maki > maxMakiScore) {
             maxMakiScore = player.maki
-            // console.log(player.name, player.maki)
-            // highest.push(player)
         }
     })
     console.log(maxMakiScore)
 
+    // get players with maxMakiScore
     const highs = playersArray.filter(function(player) {
         return player.maki === maxMakiScore
     })
     console.log(highs)
 
+    // if (highs.length === 1) {
+    //     highs[0]
+    // }
 
-    // const makiScores = []
-
-    // playersArray.forEach(function(player) {
-    //     makiScores.push({
-    //         name: player.name,
-    //         maki: player.maki
-    //     })
-    // })
-
-    // console.log(makiScores)
 
     // most = 6
     // most = 6 (split ties), no 2nd place

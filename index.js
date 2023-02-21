@@ -273,7 +273,7 @@ function handleScore(player) {
     })
 
     console.log('total', total)
-    calculateMakiScore()
+    calculateMakiScore(player)
 
     player.totalScore = total
     cardScore.textContent = player.totalScore
@@ -321,7 +321,7 @@ function calculateSashimiScore(count) {
     return (pieces * 10)
 }
 
-function calculateMakiScore() {
+function calculateMakiScore(player) {
     let maxMakiScore = 0
     let secondMakiScore = 0
 

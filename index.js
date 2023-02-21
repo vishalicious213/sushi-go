@@ -255,8 +255,9 @@ function handleScore(player) {
     let squidNigiriScore = player.squidNigiri * 3
     let wasabiEggNigiriScore = player.wasabiEggNigiri * 3
     let wasabiSalmonNigiriScore = player.wasabiSalmonNigiri * 6
+    let wasabiSquidNigiriScore = player.wasabiSquidNigiri * 9
 
-    let scores = [eggNigiriScore, salmonNigiriScore, squidNigiriScore, wasabiEggNigiriScore, wasabiSalmonNigiriScore]
+    let scores = [eggNigiriScore, salmonNigiriScore, squidNigiriScore, wasabiEggNigiriScore, wasabiSalmonNigiriScore, wasabiSquidNigiriScore]
 
     scores.forEach(function(score) {
         total += score

@@ -256,8 +256,9 @@ function handleScore(player) {
     let wasabiEggNigiriScore = player.wasabiEggNigiri * 3
     let wasabiSalmonNigiriScore = player.wasabiSalmonNigiri * 6
     let wasabiSquidNigiriScore = player.wasabiSquidNigiri * 9
+    let dumplingScore = calculateDumplingScore(player.dumpling)
 
-    let scores = [eggNigiriScore, salmonNigiriScore, squidNigiriScore, wasabiEggNigiriScore, wasabiSalmonNigiriScore, wasabiSquidNigiriScore]
+    let scores = [eggNigiriScore, salmonNigiriScore, squidNigiriScore, wasabiEggNigiriScore, wasabiSalmonNigiriScore, wasabiSquidNigiriScore, dumplingScore]
 
     scores.forEach(function(score) {
         total += score
@@ -271,10 +272,6 @@ function handleScore(player) {
     // maki: 0,
     // tempura: 0,
     // sashimi: 0,
-    // dumpling: 0,
-    // wasabiEggNigiri: 0,
-    // wasabiSalmonNigiri: 0,
-    // wasabiSquidNigiri: 0,
     // pudding: 0
 }
 
@@ -284,6 +281,20 @@ function handleScore(player) {
 function formatSushiName(sushi) {
     const sushiName = sushi.toUpperCase().replace(/-/g, " ")
     return sushiName
+}
+
+function calculateDumplingScore(count) {
+    if (count === 1) {
+        return 1
+    } else if (count === 2) {
+        return 3
+    } else if (count === 3) {
+        return 6
+    } else if (count === 4) {
+        return 10
+    } else if (count >= 5) {
+        return 15
+    }
 }
 
 // ⬇️ RENDER THE APP ⬇️

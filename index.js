@@ -194,22 +194,34 @@ function handleSushiCount(player) {
     const tempuraQty = document.getElementById("tempura-quantity")
 
     sushiCards.addEventListener("click", function(e) {
-        if (e.target.id === `maki-add`) {
-            player.maki += 1
-            makiQty.textContent = player.maki
-        } else if (e.target.id === `maki-sub`) {
-            player.maki -= 1
-            if (player.maki < 0) {player.maki = 0}
-            makiQty.textContent = player.maki
-        } else if (e.target.id === `tempura-add`) {
-            player.tempura += 1
-            tempuraQty.textContent = player.tempura
-        } else if (e.target.id === `tempura-sub`) {
-            player.tempura -= 1
-            if (player.tempura < 0) {player.tempura = 0}
-            tempuraQty.textContent = player.tempura
-        }
+        // if (e.target.id === `maki-add`) {
+        //     player.maki += 1
+        //     makiQty.textContent = player.maki
+        // } else if (e.target.id === `maki-sub`) {
+        //     player.maki -= 1
+        //     if (player.maki < 0) {player.maki = 0}
+        //     makiQty.textContent = player.maki
+        // } else if (e.target.id === `tempura-add`) {
+        //     player.tempura += 1
+        //     tempuraQty.textContent = player.tempura
+        // } else if (e.target.id === `tempura-sub`) {
+        //     player.tempura -= 1
+        //     if (player.tempura < 0) {player.tempura = 0}
+        //     tempuraQty.textContent = player.tempura
+        // }
         
+
+        let pieces = ["maki", "tempura", "sashimi", "dumpling"]
+
+        sushiArray.forEach(function(piece) {
+            // console.log(piece)
+            if (e.target.id === `${piece}-add`) {
+                console.log(piece)
+                player[piece] += 1
+                console.log(player[piece])
+                
+            }
+        })
     })
 }
 

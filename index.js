@@ -363,6 +363,13 @@ function calculateMakiScore(player) {
     })
     console.log('maxMakiScore', maxMakiScore)
 
+    // get secondMakiScore
+    playersArray.map(function(playerInArray) {
+        if (playerInArray.maki > secondMakiScore && playerInArray.maki < maxMakiScore)
+            secondMakiScore = playerInArray.maki
+    })
+    console.log('secondMakiScore', secondMakiScore)
+
     // get players with maxMakiScore
     const highs = playersArray.filter(function(playerInArray) {
         return playerInArray.maki === maxMakiScore

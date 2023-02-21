@@ -188,6 +188,20 @@ function handleChangeSelect(name) {
     optionToSelect.selected = true
 }
 
+function handleSushiCount(player) {
+    const sushiCards = document.getElementById("sushi-cards")
+
+    sushiCards.addEventListener("click", function(e) {
+        if (e.target.id === `${player}-add`) {
+            console.log(player, "add")
+        }
+
+        if (e.target.id === `${player}-sub`) {
+            console.log(player, "sub")
+        }
+    })
+}
+
 // ⬇️ HELPERS ⬇️
 
 // format sushi names for render onto cards
@@ -269,12 +283,14 @@ function renderSushiCards(player) {
         sushiCards.innerHTML += `
             <div class="sushi ${sushi}">
                 <div class="sushi-buttons">
-                    <button type="button" id="${sushi}-add">+</button>
-                    <button type="button" id="${sushi}-sub">-</button>
+                    <button type="button" id="${player.name}-add">+</button>
+                    <button type="button" id="${player.name}-sub">-</button>
                 </div>
                 <div class="quantity">${sushiQuantity}</div>
                 <div class="sushi-name">${formatSushiName(sushi)}</div>
             </div>
         `
     })
+
+    handleSushiCount(player.name)
 }

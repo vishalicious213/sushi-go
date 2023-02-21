@@ -418,33 +418,6 @@ function calculateMakiScore(player) {
 
 
 
-    // players with high score, mostMaki = true
-    // playersArray.forEach(function(player) {
-    //     if (highs.includes(player)) {
-    //         player.mostMaki = true
-    //         console.log("in highs", player)
-    //     } else {
-    //         player.mostMaki = false
-    //         console.log("not high", player)
-    //     }
-    // })
-
-    // if highs has 1 person, +6 points
-    // if (highs.length === 1) {
-    //     const highPlayer = playersArray.filter(function(player) {
-    //         highPlayer.totalScore += 6
-    //     })
-    // }
-
-    // if highs has 2 people, -3 from high[0] and +3 to high[1]
-
-    // if highs has 3 people, -1 from high[0] & [1], +2 to high[2]
-
-    // if highs has 4 people, -1 from all but last, +1 to last
-
-    // if highs has 5 people, +1 to last
-
-
 
     // most = 6
     // most = 6 (split ties), no 2nd place

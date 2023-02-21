@@ -191,20 +191,25 @@ function handleChangeSelect(name) {
 function handleSushiCount(player) {
     const sushiCards = document.getElementById("sushi-cards")
     const makiQty = document.getElementById("maki-quantity")
+    const tempuraQty = document.getElementById("tempura-quantity")
 
     sushiCards.addEventListener("click", function(e) {
         if (e.target.id === `maki-add`) {
             player.maki += 1
-            console.log(player, "add")
             makiQty.textContent = player.maki
-        }
-
-        if (e.target.id === `maki-sub`) {
+        } else if (e.target.id === `maki-sub`) {
             player.maki -= 1
             if (player.maki < 0) {player.maki = 0}
-            console.log(player, "sub")
             makiQty.textContent = player.maki
+        } else if (e.target.id === `tempura-add`) {
+            player.tempura += 1
+            tempuraQty.textContent = player.tempura
+        } else if (e.target.id === `tempura-sub`) {
+            player.tempura -= 1
+            if (player.tempura < 0) {player.tempura = 0}
+            tempuraQty.textContent = player.tempura
         }
+        
     })
 }
 

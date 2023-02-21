@@ -176,6 +176,14 @@ h2 {
     box-sizing: border-box;
 }
 
+#select-player {
+    width: 10rem;
+    font-size: 1.25rem;
+    border-radius: .25rem;
+}
+
+/* SUSHI CARDS */
+
 #sushi-cards {
     display: flex;
     flex-wrap: wrap;

@@ -316,17 +316,28 @@ function calculateSashimiScore(count) {
 }
 
 function calculateMakiScore() {
-    const makiScores = []
+    let maxMakiScore = 0
+    let highest = []
 
-    playersArray.forEach(function(player) {
-        makiScores.push({
-            name: player.name,
-            maki: player.maki
-        })
+    playersArray.map(function(player) {
+        if (player.maki > maxMakiScore) {
+            maxMakiScore = player.maki
+            // console.log(player.name, player.maki)
+            // highest.push(player)
+        }
     })
+    console.log(maxMakiScore)
 
+    // const makiScores = []
 
-    console.log(makiScores)
+    // playersArray.forEach(function(player) {
+    //     makiScores.push({
+    //         name: player.name,
+    //         maki: player.maki
+    //     })
+    // })
+
+    // console.log(makiScores)
 
     // most = 6
     // most = 6 (split ties), no 2nd place

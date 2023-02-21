@@ -324,6 +324,8 @@ function calculateSashimiScore(count) {
 function calculateMakiScore(player) {
     let maxMakiScore = 0
     let secondMakiScore = 0
+    let addMakiPoints = 0
+    let subMakiPoints = 0
 
     if (player.maki === 0) {
         console.log("no maki")
@@ -336,16 +338,19 @@ function calculateMakiScore(player) {
             maxMakiScore = playerInArray.maki
         }
     })
-    console.log(maxMakiScore)
+    console.log('maxMakiScore', maxMakiScore)
 
     // get players with maxMakiScore
     const highs = playersArray.filter(function(playerInArray) {
         return playerInArray.maki === maxMakiScore
     })
-    console.log(highs)
+    console.log('players with maxMakiScore', highs)
 
-    // check if other players have high score
+    // check if other players have high score (highs, above)
     // if no, return 6
+    if (highs.length === 1) {
+        console.log(`${player.name} is only high score`)
+    }
 
     // if 1 other, -6 from that player, +3 to both
 

@@ -188,12 +188,14 @@ function handleChangeSelect(name) {
     optionToSelect.selected = true
 }
 
+// increment / decrement sushi, per player
 function handleSushiCount(player) {
     const sushiCards = document.getElementById("sushi-cards")
 
     sushiCards.addEventListener("click", function(e) {
         let newPiece = ""
 
+        // use JS names to find object data for multi-word names
         sushiArray.forEach(function(piece) {
             if (piece === "egg-nigiri") {newPiece = "eggNigiri"}
             if (piece === "wasabi-egg-nigiri") {newPiece = "wasabiEggNigiri"}
@@ -206,7 +208,7 @@ function handleSushiCount(player) {
                 if (player[piece] >= 0) {
                     player[piece] += 1
                     document.getElementById(`${piece}-quantity`).textContent = player[piece]
-                } else {
+                } else { // use newPiece for multi-word names
                     player[newPiece] += 1
                     document.getElementById(`${piece}-quantity`).textContent = player[newPiece]
                 }
@@ -217,7 +219,7 @@ function handleSushiCount(player) {
                     player[piece] -= 1
                     if (player[piece] < 0) {player[piece] = 0}
                     document.getElementById(`${piece}-quantity`).textContent = player[piece]
-                } else {
+                } else { // use newPiece for multi-word names
                     player[newPiece] -= 1
                     if (player[newPiece] < 0) {player[newPiece] = 0}
                     document.getElementById(`${piece}-quantity`).textContent = player[newPiece]
@@ -285,7 +287,6 @@ function renderCards(player) {
 function renderSushiCards(player) {
     const sushiCards = document.getElementById("sushi-cards")
     sushiCards.innerHTML = ""
-    // console.log(player)
 
     sushiArray.forEach(function(sushi) {
         const sushiType = function() {
@@ -303,7 +304,6 @@ function renderSushiCards(player) {
         }
 
         let sushiQuantity = sushiType()
-        // console.log(sushiQuantity)
 
         sushiCards.innerHTML += `
             <div class="sushi ${sushi}">

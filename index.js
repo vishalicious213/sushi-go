@@ -361,6 +361,8 @@ function calculateMakiScore(player) {
             return playerInArray.maki === maxMakiScore && playerInArray.name != player.name
         })
         console.log("others", otherHighMakis)
+        otherHighMakis[0].totalScore -= 3
+        addMakiPoints = 3
     }
 
     // if 2 others, -3 from both, +2 to all 3

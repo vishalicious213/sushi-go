@@ -13,19 +13,19 @@
     - ✓ Delete player
     - Edit player's name
     - Edit player's color
-- `Start game`
-    - Goes to first player's scorecard
-    - If there are no players, do nothing
+- ✓ `Start game`
+    - ✓ Goes to first player's scorecard
+    - ✓ If there are no players, do nothing
 
 ## PLAYER CARDS (SCORECARD)
 
 - Top area
     - ✓ Name
-        - Include downward triangle icon
+        - ✓ Include downward triangle icon (drop-down, now)
         - Click name area to choose:
-            - A different player
+            - ✓ A different player
             - Info in SCORE MODAL section, below
-    - ✓ Score
+    - Score
     - ✓ Background is in player's color
 - Main card area
     - ✓ Show each type of sushi

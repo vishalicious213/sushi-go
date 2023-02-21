@@ -258,8 +258,9 @@ function handleScore(player) {
     let wasabiSquidNigiriScore = player.wasabiSquidNigiri * 9
     let dumplingScore = calculateDumplingScore(player.dumpling)
     let tempuraScore = calculateTempuraScore(player.tempura)
+    let sashimiScore = calculateSashimiScore(player.sashimi)
 
-    let scores = [eggNigiriScore, salmonNigiriScore, squidNigiriScore, wasabiEggNigiriScore, wasabiSalmonNigiriScore, wasabiSquidNigiriScore, dumplingScore, tempuraScore]
+    let scores = [eggNigiriScore, salmonNigiriScore, squidNigiriScore, wasabiEggNigiriScore, wasabiSalmonNigiriScore, wasabiSquidNigiriScore, dumplingScore, tempuraScore, sashimiScore]
 
     scores.forEach(function(score) {
         total += score
@@ -271,7 +272,7 @@ function handleScore(player) {
     cardScore.textContent = player.totalScore
 
     // maki: 0,
-    // sashimi: 0,
+    // sashimi: 0, set of 3 is 10 points
     // pudding: 0
 }
 
@@ -304,6 +305,11 @@ function calculateDumplingScore(count) {
 function calculateTempuraScore(count) {
     const pieces = Math.floor(count / 2)
     return (pieces * 5)
+}
+
+function calculateSashimiScore(count) {
+    const pieces = Math.floor(count / 3)
+    return (pieces * 10)
 }
 
 // ⬇️ RENDER THE APP ⬇️

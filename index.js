@@ -18,6 +18,10 @@ let playersArray = [
     {
         name: "Vish",
         color: "#000000",
+        round1: 0,
+        round2: 0,
+        round3: 0,
+        totalScore: 0,
         maki: 0,
         tempura: 0,
         sashimi: 0,
@@ -33,6 +37,10 @@ let playersArray = [
     {
         name: "Sue",
         color: "#ff0000",
+        round1: 0,
+        round2: 0,
+        round3: 0,
+        totalScore: 0,
         maki: 1,
         tempura: 0,
         sashimi: 0,
@@ -123,6 +131,10 @@ function handleAddNewPlayer() {
         playersArray.push({
             name: addPlayerNameInput.value,
             color: selectedColor,
+            round1: 0,
+            round2: 0,
+            round3: 0,
+            totalScore: 0,
             maki: 0,
             tempura: 0,
             sashimi: 0,

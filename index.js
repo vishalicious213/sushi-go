@@ -357,6 +357,10 @@ function calculateMakiScore(player) {
     // if 1 other, -6 from that player, +3 to both
     if (highs.length === 2) {
         console.log(`highs: ${highs[0].name}, ${highs[1].name}`)
+        const otherHighMakis = playersArray.filter(function(playerInArray) {
+            return playerInArray.maki === maxMakiScore && playerInArray.name != player.name
+        })
+        console.log("others", otherHighMakis)
     }
 
     // if 2 others, -3 from both, +2 to all 3

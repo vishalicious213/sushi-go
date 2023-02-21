@@ -19,6 +19,7 @@ check if other players have high score
 
 ---
 
+```javascript
 let maxMakiScore = 0
 let secondMakiScore = 0
 
@@ -27,3 +28,9 @@ if (player.maki === 0) {
     return
 }
 
+// get maxMakiScore
+// get secondMakiScore
+
+// get players with maxMakiScore highs[]
+// get players with secondMakiScore seconds[]
+```

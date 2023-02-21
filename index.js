@@ -212,14 +212,42 @@ function handleSushiCount(player) {
         
 
         let pieces = ["maki", "tempura", "sashimi", "dumpling"]
+        let newPiece = ""
 
         sushiArray.forEach(function(piece) {
+            if (piece === "egg-nigiri") {newPiece = "eggNigiri"}
+            if (piece === "wasabi-egg-nigiri") {newPiece = "wasabiEggNigiri"}
+            if (piece === "salmon-nigiri") {newPiece = "salmonNigiri"}
+            if (piece === "wasabi-salmon-nigiri") {newPiece = "wasabiSalmonNigiri"}
+            if (piece === "squid-nigiri") {newPiece = "squidNigiri"}
+            if (piece === "wasabi-squid-nigiri") {newPiece = "wasabiSquidNigiri"}
+
             // console.log(piece)
             if (e.target.id === `${piece}-add`) {
                 console.log(piece)
-                player[piece] += 1
-                console.log(player[piece])
+                if (player[piece] >= 0) {
+                    console.log(piece, "exists")
+                    player[piece] += 1
+                    console.log(player[piece])
+                    document.getElementById(`${piece}-quantity`).textContent = player[piece]
+                } else {
+                    console.log(newPiece, "exists")
+                    player[newPiece] += 1
+                    console.log(player[newPiece])
+                    document.getElementById(`${piece}-quantity`).textContent = player[newPiece]
+                }
+
                 
+                // player[piece] += 1
+                // console.log(player[piece])
+                // if (document.getElementById(`${piece}-quantity`)) {
+                //     document.getElementById(`${piece}-quantity`).textContent = player[piece]
+                // } else {
+                //     document.getElementById(`${piece}-quantity`).textContent = "player[newPiece]"
+                // }
+
+
+                // document.getElementById(`${piece}-quantity`).textContent = player[piece]
             }
         })
     })

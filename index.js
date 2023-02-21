@@ -55,6 +55,7 @@ let playersArray = [
     }
 ]
 let selectedColor = ""
+let round = 1
 const colorsArray = ["#ff00bf", "#C71585", "#ff0000", "#ff4000", "#ffbf00", "#ffd700", "#32CD32", "#008000", "#00bfff", "#00CED1", "#0040ff", "#8000ff", "#bf00ff", "#ccccff", "#808080", "#000000"]
 const sushiArray = ["maki", "tempura", "sashimi", "dumpling", "egg-nigiri",	"wasabi-egg-nigiri","salmon-nigiri", "wasabi-salmon-nigiri", "squid-nigiri", "wasabi-squid-nigiri", "pudding"]
 
@@ -224,6 +225,7 @@ function handleSushiCount(player) {
                     player[newPiece] += 1
                     document.getElementById(`${piece}-quantity`).textContent = player[newPiece]
                 }
+                handleScore(player)
             }
 
             if (e.target.id === `${piece}-sub`) {
@@ -236,9 +238,43 @@ function handleSushiCount(player) {
                     if (player[newPiece] < 0) {player[newPiece] = 0}
                     document.getElementById(`${piece}-quantity`).textContent = player[newPiece]
                 }
+                handleScore(player)
             }
         })
     })
+
+    // handleScore(player)
+}
+
+function handleScore(player) {
+    console.log("handleScore")
+    const cardScore = document.getElementById("card-score")
+    let total = 0
+
+    let eggNigiriScore = player.eggNigiri
+
+    let scores = [eggNigiriScore]
+
+    scores.forEach(function(score) {
+        total += score
+    })
+
+    console.log('total', total)
+
+    player.totalScore = total
+    cardScore.textContent = player.totalScore
+
+    // maki: 0,
+    // tempura: 0,
+    // sashimi: 0,
+    // dumpling: 0,
+    // eggNigiri: 0,
+    // salmonNigiri: 0,
+    // squidNigiri: 0,
+    // wasabiEggNigiri: 0,
+    // wasabiSalmonNigiri: 0,
+    // wasabiSquidNigiri: 0,
+    // pudding: 0
 }
 
 // ⬇️ HELPERS ⬇️
@@ -285,7 +321,7 @@ function renderCards(player) {
     playerCards.innerHTML = `
         <div class="card-header" style="background-color:${player.color};">
             <select id="select-player" name="select-player"></select>
-            <div class="card-score">${player.totalScore}</div>
+            <div id="card-score">${player.totalScore}</div>
         </div>
 
         <div id="sushi-cards"></div>

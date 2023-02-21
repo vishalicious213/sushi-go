@@ -158,6 +158,7 @@ function handleDeletePlayer(player) {
 function handleChangePlayer() {
     const selectPlayer = document.getElementById("select-player")
 
+    // loop through array and add players to drop-down
     for (let i = 0; i < playersArray.length; i++) {
         let playerOption = playersArray[i].name
         let playerElement = document.createElement("option")
@@ -173,12 +174,25 @@ function handleChangePlayer() {
         const selectedPlayer = playersArray.filter(function(playerInArray) {
             return playerInArray.name === selectPlayer.value
         })[0]
+        console.log(playersArray)
+        console.log(selectedPlayer)
         handleSelectPlayer(selectedPlayer)
     })
 
     function handleSelectPlayer(player) {
+        console.log(player)
         renderCards(player)
+        selectPlayer.value = player.name
+        console.log(selectPlayer.value)
+        console.log(player)
     }
+}
+
+function handleChangeSelect(name) {
+    const selectPlayer = document.getElementById("select-player")
+    const playerOptions = Array.from(selectPlayer.options)
+    const optionToSelect = playerOptions.find(opt => opt.text === name)
+    optionToSelect.selected = true
 }
 
 // ⬇️ RENDER THE APP ⬇️
@@ -225,6 +239,7 @@ function renderCards(player) {
 
     renderSushiCards(player)
     handleChangePlayer()
+    handleChangeSelect(player.name)
 }
 
 // render players' sushi cards for main player screens

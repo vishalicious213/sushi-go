@@ -346,6 +346,8 @@ function calculateSashimiScore(count) {
 function calculateMakiScore(player) {
     let maxMakiScore = 0
     let secondMakiScore = 0
+    let currentHighs = []
+    let currentSeconds = []
 
     if (player.maki === 0) {
         console.log("no maki")
@@ -378,6 +380,8 @@ function calculateMakiScore(player) {
         return playerInArray.maki === secondMakiScore
     })
     console.log('players with secondMakiScore', seconds)
+
+    return 0
 }
 
 // ⬇️ RENDER THE APP ⬇️

@@ -61,3 +61,8 @@ if maxPlayers[] has people in it:
         - other players -1 (points from 3 => 2, length from 2 => 3)
         - player +2
         - add player to maxPlayers[]
+    - if length = 3
+        - check if it includes current player, if so, return
+        - other players -1 (points from 2 => 1, length from 3 => 4)
+        - player +1
+        - add player to maxPlayers[]

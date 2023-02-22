@@ -344,8 +344,8 @@ function calculateSashimiScore(count) {
 }
 
 function calculateMakiScore(player) {
-    let maxMakiScore = 0
-    let secondMakiScore = 0
+    let maxMakiAmount = 0
+    let secondMakiAmount = 0
     let currentHighs = []
     let currentSeconds = []
 
@@ -356,30 +356,30 @@ function calculateMakiScore(player) {
 
     // get maxMakiScore
     playersArray.map(function(playerInArray) {
-        if (playerInArray.maki > maxMakiScore) {
-            maxMakiScore = playerInArray.maki
+        if (playerInArray.maki > maxMakiAmount) {
+            maxMakiAmount = playerInArray.maki
         }
     })
-    console.log('maxMakiScore', maxMakiScore)
+    console.log('maxMakiAmount', maxMakiAmount)
 
     // get secondMakiScore
     playersArray.map(function(playerInArray) {
-        if (playerInArray.maki > secondMakiScore && playerInArray.maki < maxMakiScore)
-            secondMakiScore = playerInArray.maki
+        if (playerInArray.maki > secondMakiAmount && playerInArray.maki < maxMakiAmount)
+            secondMakiAmount = playerInArray.maki
     })
-    console.log('secondMakiScore', secondMakiScore)
+    console.log('secondMakiAmount', secondMakiAmount)
 
     // get players with maxMakiScore
     const highs = playersArray.filter(function(playerInArray) {
-        return playerInArray.maki === maxMakiScore
+        return playerInArray.maki === maxMakiAmount
     })
-    console.log('players with maxMakiScore', highs)
+    console.log('players with maxMakiAmount', highs)
 
     // get players with secondMakiScore
     const seconds = playersArray.filter(function(playerInArray) {
-        return playerInArray.maki === secondMakiScore
+        return playerInArray.maki === secondMakiAmount
     })
-    console.log('players with secondMakiScore', seconds)
+    console.log('players with secondMakiAmount', seconds)
 
     return 0
 }

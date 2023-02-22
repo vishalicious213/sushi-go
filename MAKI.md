@@ -45,28 +45,27 @@ if (player.maki === 0) {
 get max maki score
 
 get players with max maki score
-    - if maxPlayers[] length = 0
-        - add player to maxPlayers[]
-        - give player 6 points
 
-if maxPlayers[] has people in it:
-    - if length = 1
-        - check if its current player, if so, return
-        - if its another player (points from 6 => 3)
-            - -3 for that player
-            - +3 for current player
-            - add player to maxPlayers[] (length from 1 => 2)
-    - if length = 2
-        - check if it includes current player, if so, return
-        - other players -1 (points from 3 => 2)
-        - player +2
-        - add player to maxPlayers[] (length from 2 => 3)
-    - if length = 3
-        - check if it includes current player, if so, return
-        - other players -1 (points from 2 => 1)
-        - player +1
-        - add player to maxPlayers[] (length from 3 => 4)
-    - if length = 4
-        - check if it includes current player, if so, return
-        - player +1
-        - add player to maxPlayers[] (length from 4 => 5)
+- if maxPlayers[] length = 0
+    - give player 6 points (points from 0 => 6)
+    - add player to maxPlayers[] (length from 0 => 1)
+- if maxPlayers[] length = 1
+    - check if its current player, if so, return
+    - if its another player (points from 6 => 3)
+        - -3 for that player
+        - +3 for current player
+        - add player to maxPlayers[] (length from 1 => 2)
+- if maxPlayers[] length = 2
+    - check if it includes current player, if so, return
+    - other players -1 (points from 3 => 2)
+    - player +2
+    - add player to maxPlayers[] (length from 2 => 3)
+- if maxPlayers[] length = 3
+    - check if it includes current player, if so, return
+    - other players -1 (points from 2 => 1)
+    - player +1
+    - add player to maxPlayers[] (length from 3 => 4)
+- if maxPlayers[] length = 4
+    - check if it includes current player, if so, return
+    - player +1
+    - add player to maxPlayers[] (length from 4 => 5)

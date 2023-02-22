@@ -52,7 +52,7 @@ get players with max maki score
 - if maxPlayers[] length = 1
     - check if its current player, if so, return
     - if its another player (points from 6 => 3)
-        - -3 for that player
+        - -3 for other player
         - +3 for current player
         - add player to maxPlayers[] (length from 1 => 2)
 - if maxPlayers[] length = 2
@@ -69,3 +69,16 @@ get players with max maki score
     - check if it includes current player, if so, return
     - player +1
     - add player to maxPlayers[] (length from 4 => 5)
+
+
+have to figure out how to change current maxPlayers to secondaryPlayers
+if new max is achieved and what to do with old secondaryPlayers
+
+---
+
+identify who has current high scores
+identify who has current 2nd high scores
+save current highs & current 2nds
+save previous highs & seconds
+
+THEN figure out points

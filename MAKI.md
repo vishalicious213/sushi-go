@@ -17,11 +17,11 @@ check if other players have high score
 		if 3 players, -2 from all / +1 to all
 		if 4 players, +1 to last
 
----
-
 ```javascript
 let maxMakiScore = 0
 let secondMakiScore = 0
+let addMakiPoints = 0 // points to return to current player
+let otherHighMakis = []
 
 if (player.maki === 0) {
     console.log("no maki")
@@ -33,4 +33,31 @@ if (player.maki === 0) {
 
 // get players with maxMakiScore highs[]
 // get players with secondMakiScore seconds[]
+
+// if highs[] has only 1 player, that player gets 6 points
+
+// if highs[] has 2 players
+    // filter through playersArray[] and add both to otherHighMakis[]
+    // filter
+
 ```
+
+get max maki score
+
+get players with max maki score
+    - if maxPlayers[] length = 0
+        - add player to maxPlayers[]
+        - give player 6 points
+
+if maxPlayers[] has people in it:
+    - if length = 1
+        - check if its current player, if so, return
+        - if its another player (points from 6 => 3, length from 1 => 2)
+            - -3 for that player
+            - +3 for current player
+            - add player to maxPlayers[]
+    - if length = 2
+        - check if it includes current player, if so, return
+        - other players -1 (points from 3 => 2, length from 2 => 3)
+        - player +2
+        - add player to maxPlayers[]

@@ -386,16 +386,24 @@ function calculateMakiScore(player) {
     })
     console.log('players with secondMakiAmount', seconds)
 
-    // highs has players & currentHighPlayers is empty
-    if (highs.length > 0 && currentHighPlayers.length === 0) {
-        currentHighPlayers.push(highs[0])
-        console.log("highs", highs[0])
-        console.log("curHi's", currentHighPlayers)
+    // if someone has a high score
+    if (highs.length > 0) {
+        if (currentHighPlayers.length === 0) {
+            currentHighPlayers.push(highs[0])
+            return 6
+        }
     }
 
-    // if seconds != currentSecondPlayers, 
-    
-    // if highs != currentHighPlayers, 
+
+
+    // highs has players & currentHighPlayers is empty
+    // if (highs.length > 0 && currentHighPlayers.length === 0) {
+    //     currentHighPlayers.push(highs[0])
+    //     console.log("highs", highs[0])
+    //     console.log("curHi's", currentHighPlayers)
+    // }
+
+
 
     return 0
 }

@@ -1,3 +1,29 @@
+identify who has current high scores (highs)
+identify who has current 2nd high scores (seconds)
+
+save current highs & current 2nds
+save previous highs & seconds
+
+THEN figure out points
+
+pseudo:
+
+if (someone has a high score)
+    if (currentHighs is empty) 
+        add high-scorer to currentHighs
+        add 6 points to high-scorer
+    if (currentHighs is the same as high-scorer)
+        return 0
+    if (currentHighs has someone else)
+        remove points for other person(s)
+            add new points to other person(s)
+                points = 6 / (currentHighs + 1), drop remainder
+        add high-scorer to currentHighs
+            add points to high-scorer (return points)
+
+
+---
+
 if only one high, 6 and allow 2nd place
 if more than one high, split and no 2nd place
 if 2nd place, 3
@@ -75,32 +101,6 @@ have to figure out how to change current maxPlayers to secondaryPlayers
 if new max is achieved and what to do with old secondaryPlayers
 
 ---
-
-identify who has current high scores (highs)
-identify who has current 2nd high scores (seconds)
-
-save current highs & current 2nds
-save previous highs & seconds
-
-THEN figure out points
-
-pseudo:
-
-if (someone has a high score)
-    if (currentHighs is empty) 
-        add high-scorer to currentHighs
-        add 6 points to high-scorer
-    if (currentHighs is the same as high-scorer)
-        return 0
-    if (currentHighs has someone else)
-        remove points for other person(s)
-            add new points to other person(s)
-                points = 6 / (currentHighs + 1), drop remainder
-        add high-scorer to currentHighs
-            add points to high-scorer (return points)
-
-
-
 
 ```javascript
 function calculateMakiScore(player) {

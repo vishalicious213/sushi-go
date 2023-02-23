@@ -1,0 +1,65 @@
+Vish	Sue	Mika	Rita	Mark
+0	0	0	0	0
+1	0	0	0	0
+1	1	0	0	0
+1	1	1	0	0
+
+2	1	1	0	0
+
+
+maxMakiScore --------------------
+1	1	1
+
+2
+
+secondMakiScore -----------------
+0	0	0
+
+1
+
+
+high ----------------------------
+1	1	1
+
+2
+
+seconds -------------------------
+0	0	0
+
+1
+
+currentHighPlayers --------------
+vish	vish	vish
+	sue	sue
+		mika
+
+vish
+
+if currentHighPlayers != previousHigh
+	do something
+
+previousHigh --------------------
+	vish	vish
+		sue
+
+sue
+
+
+currentSecondPlayers ------------
+sue	mika	rita
+mika	rita	mark
+rita	mark
+mark
+
+sue
+mika
+
+if currentSecondPlayers != previousSecond
+	do something
+
+previousSecond ------------------
+	sue	mika
+	mika	rita
+	rita	mark
+	mark
+

@@ -82,6 +82,10 @@ identify who has current 2nd high scores (seconds)
 save current highs & current 2nds
 save previous highs & seconds
 
+THEN figure out points
+
+pseudo:
+
 if (someone has a high score)
     if (currentHighs is empty) 
         add high-scorer to currentHighs
@@ -91,26 +95,12 @@ if (someone has a high score)
     if (currentHighs has someone else)
         remove points for other person(s)
             add new points to other person(s)
-            points = 6 / (currentHighs + 1), drop remainder
+                points = 6 / (currentHighs + 1), drop remainder
         add high-scorer to currentHighs
             add points to high-scorer (return points)
 
 
-if (highs > 0) {
-    if (currentHighs = 0) save highs to currentHighs
-    if (highs === currentHighs) return 0
-    if (highs != currentHighs) {
-        if (secondHighs = 0) {
-            
-            save highs to currentHighs
-        }
 
-    }
-}
-
-
-
-THEN figure out points
 
 ```javascript
 function calculateMakiScore(player) {

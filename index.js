@@ -351,7 +351,7 @@ function calculateMakiScore(player) {
 
     if (player.maki === 0) {
         console.log("no maki")
-        return
+        return 0
     }
 
     // get maxMakiScore
@@ -385,6 +385,13 @@ function calculateMakiScore(player) {
         return playerInArray.maki === secondMakiAmount
     })
     console.log('players with secondMakiAmount', seconds)
+
+    // highs has players & currentHighPlayers is empty
+    if (highs.length > 0 && currentHighPlayers.length === 0) {
+        currentHighPlayers.push(highs[0])
+        console.log("highs", highs[0])
+        console.log("curHi's", currentHighPlayers)
+    }
 
     // if seconds != currentSecondPlayers, 
     

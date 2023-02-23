@@ -78,8 +78,24 @@ if new max is achieved and what to do with old secondaryPlayers
 
 identify who has current high scores
 identify who has current 2nd high scores
+
 save current highs & current 2nds
 save previous highs & seconds
+
+
+if (highs > 0) {
+    if (currentHighs = 0) save highs to currentHighs
+    if (highs === currentHighs) return 0
+    if (highs != currentHighs) {
+        if (secondHighs = 0) {
+            
+            save highs to currentHighs
+        }
+
+    }
+}
+
+
 
 THEN figure out points
 

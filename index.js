@@ -83,6 +83,8 @@ let selectedColor = ""
 let round = 1
 const colorsArray = ["#ff00bf", "#C71585", "#ff0000", "#ff4000", "#ffbf00", "#ffd700", "#32CD32", "#008000", "#00bfff", "#00CED1", "#0040ff", "#8000ff", "#bf00ff", "#ccccff", "#808080", "#000000"]
 const sushiArray = ["maki", "tempura", "sashimi", "dumpling", "egg-nigiri",	"wasabi-egg-nigiri","salmon-nigiri", "wasabi-salmon-nigiri", "squid-nigiri", "wasabi-squid-nigiri", "pudding"]
+let currentHighPlayers = []
+let currentSecondPlayers = []
 
 // ⬇️ USER INTERFACE ⬇️
 
@@ -343,15 +345,16 @@ function calculateSashimiScore(count) {
     return (pieces * 10)
 }
 
+// MAKI SCORING
 function calculateMakiScore(player) {
     let maxMakiAmount = 0
     let secondMakiAmount = 0
-    let currentHighPlayers = []
-    let currentSecondPlayers = []
+    let makiPoints = 0
+
 
     if (player.maki === 0) {
-        console.log("no maki")
-        return 0
+        console.log("no maki", makiPoints)
+        return makiPoints
     }
 
     // get maxMakiScore
@@ -370,8 +373,8 @@ function calculateMakiScore(player) {
     console.log('secondMakiAmount', secondMakiAmount)
 
     if (player.maki < secondMakiAmount) {
-        console.log("not enough maki")
-        return 0
+        console.log("not enough maki", makiPoints)
+        return makiPoints
     }
 
     // get players with maxMakiScore
@@ -388,10 +391,23 @@ function calculateMakiScore(player) {
 
     // if someone has a high score
     if (highs.length > 0) {
+        // if there were no other high scorers
         if (currentHighPlayers.length === 0) {
+            makiPoints = 6
             currentHighPlayers.push(highs[0])
-            return 6
+            console.log("added", makiPoints)
+            return makiPoints
         }
+
+        // if high scorer is this player
+        if (currentHighPlayers.length === 1) {
+            makiPoints = 6
+            console.log(currentHighPlayers[0])
+            return makiPoints
+        }
+        // if (currentHighPlayers.length === 1 & currentHighPlayers[0] === highs [0]) {
+        //     console.log("maintaining maki lead")
+        // }
     }
 
 
@@ -404,8 +420,8 @@ function calculateMakiScore(player) {
     // }
 
 
-
-    return 0
+    console.log("end maki", makiPoints)
+    return makiPoints
 }
 
 // ⬇️ RENDER THE APP ⬇️

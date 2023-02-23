@@ -13,7 +13,7 @@ if (someone has a high score)
         add high-scorer to currentHighs
         add 6 points to high-scorer
     if (currentHighs is the same as high-scorer)
-        return 0
+        return 6 points to high-scorer
     if (currentHighs has someone else)
         remove points for other person(s)
             add new points to other person(s)

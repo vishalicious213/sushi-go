@@ -84,14 +84,16 @@ save previous highs & seconds
 
 if (someone has a high score)
     if (currentHighs is empty) 
-        save high-scorer to currentHighs
+        add high-scorer to currentHighs
         add 6 points to high-scorer
     if (currentHighs is the same as high-scorer)
         return 0
     if (currentHighs has someone else)
         remove points for other person(s)
+            add new points to other person(s)
+            points = 6 / (currentHighs + 1), drop remainder
         add high-scorer to currentHighs
-        add points for all currentHighs
+            add points to high-scorer (return points)
 
 
 if (highs > 0) {

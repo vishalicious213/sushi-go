@@ -381,17 +381,17 @@ function calculateMakiScore(player) {
     const highs = playersArray.filter(function(playerInArray) {
         return playerInArray.maki === maxMakiAmount
     })
-    console.log('players with maxMakiAmount', highs)
+    console.log('highs:', highs)
 
     // get players with secondMakiScore
     const seconds = playersArray.filter(function(playerInArray) {
         return playerInArray.maki === secondMakiAmount
     })
-    console.log('players with secondMakiAmount', seconds)
+    console.log('seconds', seconds)
 
     // if someone has a high score
     if (highs.length > 0) {
-        // if there were no other high scorers
+        // if there were no other high scorers add current player
         if (currentHighPlayers.length === 0) {
             makiPoints = 6
             currentHighPlayers.push(highs[0])
@@ -399,15 +399,49 @@ function calculateMakiScore(player) {
             return makiPoints
         }
 
-        // if high scorer is this player
-        if (currentHighPlayers.length === 1) {
+        // if high scorer is current player, maintain 6 points
+        if (highs.length === 1 && currentHighPlayers[0].name === highs[0].name) {
             makiPoints = 6
-            console.log(currentHighPlayers[0])
+            console.log('currentHigh:', currentHighPlayers)
+            console.log('highs', highs)
             return makiPoints
         }
-        // if (currentHighPlayers.length === 1 & currentHighPlayers[0] === highs [0]) {
-        //     console.log("maintaining maki lead")
+
+        // if there is more than one high scorer, split 6 points
+        if (highs.length > 1) {
+            // remove points from currentHighPlayers
+            const pointsToRemove = Math.floor(6 / currentHighPlayers.length)
+            console.log("remove points", pointsToRemove)
+            currentHighPlayers.forEach(function(player) {
+                player.totalScore -= pointsToRemove
+                console.log(player.name, player.totalScore)
+            })
+
+            // add points to currentHighPlayers and to current player
+            const pointsToAdd = Math.floor(6 / highs.length)
+            console.log("add points", pointsToAdd)
+            currentHighPlayers.forEach(function(player) {
+                player.totalScore += pointsToAdd
+                console.log(player.name, player.totalScore)
+            })
+
+            // update currentHighPlayers
+            currentHighPlayers = highs.slice(0)
+            console.log(currentHighPlayers)
+            makiPoints = pointsToAdd
+            return makiPoints
+        }
+
+        // if there were others with the high score
+        // if (currentHighPlayers.length > 0) {
+        //     currentHighPlayers.forEach(function(player) {
+        //         //remove players' points
+        //         let pointsToRemove = floor(6 / currentHighPlayers.length)
+        //         console.log('remove points', pointsToRemove)
+        //         console.log(`${player.name}: ${player.totalScore} - ${pointsToRemove} =`, player.totalScore - pointsToRemove)
+        //     })
         // }
+
     }
 
 

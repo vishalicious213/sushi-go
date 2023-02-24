@@ -16,10 +16,27 @@ if (someone has a high score)
         return 6 points to high-scorer
     if (currentHighs has someone else)
         remove points for other person(s)
+            points = 6 / currentHighs, drop remainder
         add new points to other person(s)
             points = 6 / (currentHighs + 1), drop remainder
         add high-scorer to currentHighs
             add points to high-scorer (return points)
+
+
+if (highs has one person)
+    if (someone has a 2nd high score)
+        if (current2ndHighs is empty)
+            add 2nd-scorer to current2ndHighs
+            add 3 points to 2nd-scorer
+        if (current2ndHighs is the same as 2nd-scorer)
+            return 3 points to 2nd-scorer
+        if (current2ndHighs has someone else)
+            remove points for other person(s)
+                points = 3 / (current2ndHighs), drop remainder
+            add new points to other person(s)
+                points = 3 / (current2ndHighs + 1), drop remainder
+            add 2nd-scorer to current2ndHighs
+                add points to 2nd-scorer (return points)
 
 
 ---

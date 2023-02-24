@@ -398,16 +398,31 @@ function calculateMakiScore(player) {
         if (currentHighPlayers.length === 0) {
             makiPoints = 6
             currentHighPlayers.push(highs[0])
-            // console.log("added", makiPoints)
+            console.log("if there were no other high scorers add current player")
+            console.log('currentHigh', currentHighPlayers)
+            console.log("added", makiPoints)
             return makiPoints
         }
 
         // if high scorer is current player, maintain 6 points
-        if (highs.length === 1 && currentHighPlayers[0].name === highs[0].name) {
+        if (currentHighPlayers.length === 1 && 
+            highs.length === 1 && 
+            currentHighPlayers[0].name === player.name) {
             makiPoints = 6
-            // console.log('currentHigh:', currentHighPlayers)
-            // console.log('highs', highs)
+            console.log("if high scorer is current player, maintain 6 points")
+            console.log('currentHigh:', currentHighPlayers)
+            console.log('highs', highs)
+            console.log("maintain", makiPoints)
             return makiPoints
+        }
+
+        // if high scorer is different from saved one
+        if (currentHighPlayers.length === 1 &&
+            highs.length === 1 &&
+            currentHighPlayers[0].name != highs[0].name) {
+                console.log("if high scorer is different from saved one")
+                console.log("saved high", currentHighPlayers[0].name)
+                console.log("new high", highs[0].name)
         }
 
         // if there is more than one high scorer, split 6 points

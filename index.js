@@ -359,7 +359,8 @@ function calculateMakiScore(player) {
 
     // get maxMakiAmount
     playersArray.map(function(playerInArray) {
-        if (playerInArray.maki > maxMakiAmount) {
+        if (playerInArray.maki > 0 && 
+            playerInArray.maki > maxMakiAmount) {
             maxMakiAmount = playerInArray.maki
         }
     })
@@ -367,7 +368,9 @@ function calculateMakiScore(player) {
 
     // get secondMakiAmount
     playersArray.map(function(playerInArray) {
-        if (playerInArray.maki > secondMakiAmount && playerInArray.maki < maxMakiAmount)
+        if (playerInArray.maki > 0 && 
+            playerInArray.maki > secondMakiAmount && 
+            playerInArray.maki < maxMakiAmount)
             secondMakiAmount = playerInArray.maki
     })
     console.log('secondMakiAmount', secondMakiAmount)
@@ -442,6 +445,12 @@ function calculateMakiScore(player) {
                 currentSecondPlayers.push(seconds[0])
                 return makiPoints
             }
+        }
+
+        // if 2nd high scorer is current player, maintain 3 points
+        if (seconds.length === 1 && currentSecondPlayers[0].name === seconds[0].name) {
+            makiPoints = 3
+            return makiPoints
         }
     }
 

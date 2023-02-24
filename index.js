@@ -353,11 +353,11 @@ function calculateMakiScore(player) {
 
 
     if (player.maki === 0) {
-        console.log("no maki", makiPoints)
+        // console.log("no maki", makiPoints)
         return makiPoints
     }
 
-    // get maxMakiScore
+    // get maxMakiAmount
     playersArray.map(function(playerInArray) {
         if (playerInArray.maki > maxMakiAmount) {
             maxMakiAmount = playerInArray.maki
@@ -365,7 +365,7 @@ function calculateMakiScore(player) {
     })
     console.log('maxMakiAmount', maxMakiAmount)
 
-    // get secondMakiScore
+    // get secondMakiAmount
     playersArray.map(function(playerInArray) {
         if (playerInArray.maki > secondMakiAmount && playerInArray.maki < maxMakiAmount)
             secondMakiAmount = playerInArray.maki
@@ -373,7 +373,7 @@ function calculateMakiScore(player) {
     console.log('secondMakiAmount', secondMakiAmount)
 
     if (player.maki < secondMakiAmount) {
-        console.log("not enough maki", makiPoints)
+        // console.log("not enough maki", makiPoints)
         return makiPoints
     }
 
@@ -389,21 +389,21 @@ function calculateMakiScore(player) {
     })
     console.log('seconds', seconds)
 
-    // if someone has a high score
+    // if someone has a high score, figure out players with high score
     if (highs.length > 0) {
         // if there were no other high scorers add current player
         if (currentHighPlayers.length === 0) {
             makiPoints = 6
             currentHighPlayers.push(highs[0])
-            console.log("added", makiPoints)
+            // console.log("added", makiPoints)
             return makiPoints
         }
 
         // if high scorer is current player, maintain 6 points
         if (highs.length === 1 && currentHighPlayers[0].name === highs[0].name) {
             makiPoints = 6
-            console.log('currentHigh:', currentHighPlayers)
-            console.log('highs', highs)
+            // console.log('currentHigh:', currentHighPlayers)
+            // console.log('highs', highs)
             return makiPoints
         }
 
@@ -411,28 +411,38 @@ function calculateMakiScore(player) {
         if (highs.length > 1) {
             // remove points from currentHighPlayers
             const pointsToRemove = Math.floor(6 / currentHighPlayers.length)
-            console.log("remove points", pointsToRemove)
+            // console.log("remove points", pointsToRemove)
             currentHighPlayers.forEach(function(player) {
                 player.totalScore -= pointsToRemove
-                console.log(player.name, player.totalScore)
+                // console.log(player.name, player.totalScore)
             })
 
             // add points to currentHighPlayers
             const pointsToAdd = Math.floor(6 / highs.length)
-            console.log("add points", pointsToAdd)
+            // console.log("add points", pointsToAdd)
             currentHighPlayers.forEach(function(player) {
                 player.totalScore += pointsToAdd
-                console.log(player.name, player.totalScore)
+                // console.log(player.name, player.totalScore)
             })
 
             // update currentHighPlayers & add points to current player
             currentHighPlayers = highs.slice(0)
-            console.log(currentHighPlayers)
+            // console.log(currentHighPlayers)
             makiPoints = pointsToAdd
             return makiPoints
         }
+    }
 
-
+    // if only 1 person has high score, figure out players with 2nd high score
+    if (highs.length === 1) {
+        // if there's no 2nd high scorer, add current player
+        if (seconds.length > 0) {
+            if (currentSecondPlayers.length === 0) {
+                makiPoints = 3
+                currentSecondPlayers.push(seconds[0])
+                return makiPoints
+            }
+        }
     }
 
     console.log("end maki", makiPoints)
